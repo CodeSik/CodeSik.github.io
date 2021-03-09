@@ -1,6 +1,6 @@
 # Site Settings
 name: CodeSik의 개발 공방
-title: CodeSik의 개발 공방 Tech Blog
+title: CodeSik의 개발 공방 | Tech Blog
 email: iqeq2328@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Tech Blog
@@ -194,49 +194,7 @@ defaults:
       math: true
       paginate: true
       optimized_image: "/assets/img/default_imgs/blog-image.png"
-  -
-    scope:
-      path: "_posts/algorithms" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      category: "algorithm"
-      optimized_image: "/assets/img/default_imgs/thumb/algorithm.png"
-  -
-    scope:
-      path: "_posts/web" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      category: "web"
-      optimized_image: "/assets/img/default_imgs/thumb/web.jpg"
-  -
-    scope:
-      path: "_posts/blog" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      category: "blog"
-      optimized_image: "/assets/img/default_imgs/thumb/blog.jpg"
-  -
-    scope:
-      path: "_posts/book" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      category: "book"
-      optimized_image: "/assets/img/default_imgs/thumb/book.jpg"
-  -
-    scope:
-      path: "_posts/til" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      category: "TIL"
-      optimized_image: "/assets/img/default_imgs/thumb/til.jpg"
 
-  -
-    scope:
-      path: "_posts/tips" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      category: "tips"
-      optimized_image: "/assets/img/default_imgs/thumb/tips.jpg"
   -
     scope:
       path: "_posts/Life" # an empty string here means all files in the project

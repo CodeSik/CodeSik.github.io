@@ -5,6 +5,7 @@ title: "[Github 블로그 호스팅] 개발 공방의 시작"
 description: "[Github 블로그 호스팅] 개발 공방의 시작"
 image: "/assets/img/default_imgs/thumb/tips.jpg"
 optimized_image: "/assets/img/default_imgs/thumb/tips.jpg"
+category: Life
 ---
 
 # **주인장 소개**
@@ -34,7 +35,7 @@ optimized_image: "/assets/img/default_imgs/thumb/tips.jpg"
 개인적으로 개발자는 간지를 먹고 들어가야 능률이 올라간다고 생각하는 1인입니다 :smirk:<br><br>
 
 ---
-<img src = "https://i.imgur.com/01tNsB6.png" width = "50%" height = "50%"><br>
+<img src = "https://i.imgur.com/01tNsB6.png"><br>
 
 ---
 
@@ -53,7 +54,7 @@ optimized_image: "/assets/img/default_imgs/thumb/tips.jpg"
 나름 오늘의집에서 주간베스트도 먹어봤습니다 :house:<br>
 
 ---
-<img src = "https://i.imgur.com/ZJmwBCH.jpg" width = "30%" height = "30%"><img src = "https://i.imgur.com/R9u5kD7.jpg" width = "30%" height = "30%">
+<img src = "https://i.imgur.com/ZJmwBCH.jpg" ><img src = "https://i.imgur.com/R9u5kD7.jpg">
 
 ---
 <br>
