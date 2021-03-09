@@ -15,18 +15,4 @@
             <lastmod>2021-01-06</lastmod>
         </url>
     
-        <url>
-            <loc>http://localhost:4000/2020-09-01-TIL/</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>2020-09-01</lastmod>
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/2020-09-01-TIL/</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>2020-09-01</lastmod>
-        </url>
-    
 </urlset>

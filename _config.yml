@@ -200,16 +200,8 @@ defaults:
       path: "_posts/Life" # an empty string here means all files in the project
       type: "posts"
     values:
-      category: "OS"
+      category: "Life"
       optimized_image: "/assets/img/default_imgs/thumb/til.png"
-
-  -
-    scope:
-      path: "_posts/Tip" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      category: "Tip"
-      optimized_image: "/assets/img/default_imgs/thumb/tips.png"
 
 
 # Theme
