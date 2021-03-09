@@ -16,7 +16,7 @@
     {% if page.image %}
         {% assign image = page.image %}
     {% else %}
-        {% assign image = "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url %}
+        {% assign image = "/src/img/blog-image.png" | prepend: site.baseurl | prepend: site.url %}
     {% endif %}
 
     {% assign description = '' %}
@@ -48,7 +48,7 @@
         <meta name="twitter:site" content="@{{ site.twitter_username }}">
     {% endif %}
 
-    
+
     <!-- Social: Facebook / Open Graph -->
     <meta property="og:url" content="{{ url }}">
     <meta property="og:title" content="{{ title }}">
