@@ -143,7 +143,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "sunmon"
+      author: "CodeSik"
       category: "undefined"
       math: true
       paginate: true
