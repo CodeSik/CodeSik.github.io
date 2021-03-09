@@ -28,11 +28,8 @@ permalink: /about
       {% endif %}
 
       {% assign image = '' %}
-      {% if page.image %}
-          {% assign image = page.image %}
-      {% else %}
-          {% assign image = "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url %}
-      {% endif %}
+      {% assign image = "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url %}
+
 
       {% assign description = '' %}
       {% if page.description %}
@@ -137,7 +134,7 @@ permalink: /about
         {% endif %}
       </title>
       <!-- favicon -->
-      <link rel="shortcut icon" href="{{ "/static/assets/img/favicon.ico" | prepend: site.baseurl }}">
+      <!-- <link rel="shortcut icon" href="{{ "/static/assets/img/favicon.ico" | prepend: site.baseurl }}"> -->
 
       <!-- Main CSS -->
       <link href="{{ "/static/assets/app-20180125.min.css" | prepend: site.baseurl }}" rel="stylesheet">
