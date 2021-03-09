@@ -1,0 +1,130 @@
+# Site Settings
+#=include site.yml
+
+# Social Media Settings
+# Remove the item if you don't need it
+#=include social.yml
+
+# Posts Settings
+#=include posts.yml
+
+# Advanced Settings
+#=include advanced.yml
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+collections:
+  authors:
+    output: true
+paginate_path: "/page/:num/"
+show_get_theme_btn: false
+use_logo: false
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# SASS
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-paginate-content
+  - jekyll-last-modified-at
+
+# Exclude my node related stuff
+exclude: [
+  'package.json',
+  'package-lock.json',
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'README.md'
+]
+
+# default YAML
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"
+      author: "CodeSik"
+      category: "undefined"
+      math: true
+      paginate: true
+  -
+    scope:
+      path: "_posts/algorithms" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "algorithm"
+      optimized_image: "/assets/img/default_imgs/thumb/algorithm.png"
+  -
+    scope:
+      path: "_posts/web" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "web"
+      optimized_image: "/assets/img/default_imgs/thumb/web.jpg"
+  -
+    scope:
+      path: "_posts/blog" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "blog"
+      optimized_image: "/assets/img/default_imgs/thumb/blog.jpg"
+  -
+    scope:
+      path: "_posts/book" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "book"
+      optimized_image: "/assets/img/default_imgs/thumb/book.jpg"
+  -
+    scope:
+      path: "_posts/til" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "TIL"
+      optimized_image: "/assets/img/default_imgs/thumb/til.jpg"
+
+  -
+    scope:
+      path: "_posts/tips" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "tips"
+      optimized_image: "/assets/img/default_imgs/thumb/tips.jpg"
+  -
+    scope:
+      path: "_posts/etc" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "etc"
+      optimized_image: "/assets/img/default_imgs/thumb/etc.png"
+
+# Theme
+# version: v3.1.0

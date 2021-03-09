@@ -7,6 +7,48 @@ description: >- # this means to ignore newlines until "baseurl:"
   Web, Server, Computer Science
 teaser: /assets/img/blog-image.png
 logo: /assets/img/blog-image.png
+translations:
+  text:
+    new_post: "새로운 포스트"
+    see_also: "이런 포스트도 있어요."
+    search: "검색 하기"
+    author: "저자"
+    share: "공유하기"
+    comments: "댓글"
+  button:
+    read_now: "지금 읽기"
+    share_on_twitter: "트위터에 공유하기"
+    share_on_facebook: "페이스북에 공유하기"
+  pagination:
+    page: "페이지"
+    of: "의"
+    next_page: "다음 페이지"
+    next_post: "이전 페이지"
+  recommendation:
+    text: "이 글은 어떠세요?"
+    back_btn: "위로 가기"
+  error_404:
+    title: "페이지를 찾을 수 없습니다."
+    message: "죄송합니다, 입력하신 페이지를 찾을 수 없습니다."
+    image_alt: "404 - Page not found"
+  contact:
+    title: "연락하기"
+    subject: "새 연락"
+    submit_btn: "보내기"
+    placeholders:
+      name: "이름"
+      email: "이메일"
+      message: "메시지"
+    errors:
+      locale: "en"
+      empty_name: "이름을 입력해야 합니다."
+      empty_email: "이메일을 입력해야 합니다."
+      invalid_email: "유효하지 않은 이메일입니다."
+      empty_message: "메시지를 입력해야 합니다."
+    after_send:
+      title: "전송 완료"
+      message: "메시지를 주셔서 감사합니다. 빠른 시일 내에 답장드리도록 하겠습니다."
+
 # author -- index page "about me" section
 author:  # change following line to your infomation.
   name: CodeSik  # Be used at blog posts' author.
@@ -82,6 +124,8 @@ google_analytics: "UA-191544283-1"
 language: "ko"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"
+
+#translate
 
 
 # Build settings
