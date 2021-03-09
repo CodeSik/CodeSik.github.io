@@ -1,9 +1,9 @@
-name: NOT_NULL
-title: NOT NULL | TIL & Tech Blog
-email: blackmilk274@gmail.com
+name: CodeSik의 개발 공방
+title: CodeSik의 개발 공방 | Tech Blog
+email: iqeq2328@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  TIL (Today I Learn) & Tech Blog
-  Web, Security, Computer Science
+  Tech Blog
+  Web, Server, Computer Science
 tags:
   - blog
   - web
@@ -24,6 +24,6 @@ menu:
   - title: Feed
     url: /feed.xml
 
-email: blackmilk274@gmail.com
-disqus_username: Sunmon
+email: iqeq2328@gmail.com
+disqus_username: codesik-github-io-1
 paginate: 12
