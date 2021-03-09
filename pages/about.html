@@ -12,6 +12,7 @@ permalink: /about
     {% else %}
         {% include index_head.html %}
     {% endif %}
+
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,8 +70,6 @@ permalink: /about
       <meta property="og:description" content="{{ description }}">
       <meta property="og:site_name" content="{{ site.title }}">
 
-      <!-- Favicon -->
-      <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon" />
 
       <!-- Apple Touch Icons -->
       <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/icons/apple-touch-icon.png" />
@@ -160,9 +159,9 @@ permalink: /about
 
 
 <body id="page-top" class="landing-page">
-
     {% include svg-icons.html %}
     {% include header.html %}
+
 
     {% if page.title != 'index' %}
         {% include blog_header.html %}
