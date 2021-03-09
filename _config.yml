@@ -22,7 +22,7 @@ translations:
     share_on_facebook: "페이스북에 공유하기"
   pagination:
     page: "페이지"
-    of: "의"
+    of: "of"
     next_page: "다음 페이지"
     next_post: "이전 페이지"
   recommendation:
