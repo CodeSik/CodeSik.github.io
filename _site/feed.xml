@@ -5,8 +5,8 @@
     <description>Tech Blog Web, Server, Computer Science</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Mar 2021 01:55:29 +0900</pubDate>
-    <lastBuildDate>Wed, 10 Mar 2021 01:55:29 +0900</lastBuildDate>
+    <pubDate>Wed, 10 Mar 2021 02:42:52 +0900</pubDate>
+    <lastBuildDate>Wed, 10 Mar 2021 02:42:52 +0900</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -16,7 +16,7 @@
         <link>http://localhost:4000/First-Post/</link>
         <guid isPermaLink="true">http://localhost:4000/First-Post/</guid>
         
-        <category>Life</category>
+        <category>일상</category>
       </item>
     
       <item>
@@ -26,7 +26,7 @@
         <link>http://localhost:4000/console-input-using-generator/</link>
         <guid isPermaLink="true">http://localhost:4000/console-input-using-generator/</guid>
         
-        <category>Life</category>
+        <category>일상</category>
       </item>
     
       <item>
@@ -38,7 +38,19 @@
         
         <category>html</category>
         
-        <category>Project</category>
+        <category>프로젝트</category>
+      </item>
+    
+      <item>
+        <title>2020-09-01 TIL</title>
+        <description>&lt;h1 id=&quot;til&quot;&gt;TIL&lt;/h1&gt; &lt;h2 id=&quot;html-dataset&quot;&gt;html dataset&lt;/h2&gt; &lt;p&gt;html dataset에 관해 알았다.&lt;/p&gt; &lt;h2 id=&quot;git-잔디심기&quot;&gt;git 잔디심기&lt;/h2&gt; &lt;p&gt;fork한 리포지토리에는 잔디가 안 심어진다….&lt;/p&gt; &lt;p&gt;내가 여태까지 github page 만든다고 한건… 다 안 심어졌다…&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;❓❔ fork하면 잔디가 안 심어지는데, 그럼 블로그 포스팅시 잔디를 어떻게 심지?&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;해결:&lt;/p&gt; &lt;p&gt;템플릿 repo로 가서, &lt;strong&gt;Use this template&lt;/strong&gt;버튼을 눌러 복사한다.&lt;/p&gt; &lt;p&gt;그리고 이전에 만들어놨던 블로그 작업들을 복사한다..&lt;/p&gt; &lt;h2 id=&quot;html-role&quot;&gt;html role&lt;/h2&gt; &lt;p&gt;html role은 뭐지?&lt;/p&gt; &lt;h2 id=&quot;페이지-내-링크-간격-조절&quot;&gt;페이지 내 링크 간격 조절&lt;/h2&gt; &lt;p&gt;페이지 내에 링크 삽입해서 따라가는것 (이름을 뭐라고 하지?)의 간격을 조정하는 방법을 배웠다.&lt;/p&gt; &lt;p&gt;html에서 id 부여해놓고, 어디 링크 클릭하면 내부 id 위치로 이동하는 코드말이다. 사진은 어떻게 넣지? #id 어쩌구저쩌구 해놓고 간격을 +해줄 필요가 없다. anchor를...</description>
+        <pubDate>Tue, 01 Sep 2020 20:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2020-09-01-TIL/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020-09-01-TIL/</guid>
+        
+        <category>html</category>
+        
+        <category>프레임워크</category>
       </item>
     
   </channel>

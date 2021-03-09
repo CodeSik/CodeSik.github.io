@@ -1,10 +1,11 @@
 ---
 date: 2021-01-06 23:40:45 +0900
 layout: post
-title: Javascript 콘솔로 입력받기 (feat.제너레이터) 
-description: 콘솔로 여러 줄을 입력받을때 제너레이터를 이용하여 처리하는 방법 
+title: Javascript 콘솔로 입력받기 (feat.제너레이터)
+description: 콘솔로 여러 줄을 입력받을때 제너레이터를 이용하여 처리하는 방법
 image: https://user-images.githubusercontent.com/26290571/103780039-d46a5200-5077-11eb-8d9b-333cc28abdd1.png
 optimized_image: https://user-images.githubusercontent.com/26290571/103780039-d46a5200-5077-11eb-8d9b-333cc28abdd1.png
+category: 일상
 ---
 
 <p class="callout"> 💡JS 콘솔로 입력받는 방법</p>
@@ -24,7 +25,7 @@ readline을 이용하여 *이벤트* 형식으로 입력받는 방법이다. 입
     input: process.stdin,
     output: process.stdout,
   });
-  rl.on("line", (line) => { 
+  rl.on("line", (line) => {
       // 한 줄씩 입력받은 후 실행할 코드
       rl.close(); // 필수. 없으면 입력을 무한히 받는다
   });
@@ -81,7 +82,7 @@ readline을 이용하여 *이벤트* 형식으로 입력받는 방법이다. 입
 
 ```js
   let n, m, k;
-  
+
   // 입력 한번에 변수 하나씩 저장하는 함수
   const generatorSequence = function* () {
     n = yield;
@@ -93,7 +94,7 @@ readline을 이용하여 *이벤트* 형식으로 입력받는 방법이다. 입
   const generator = generatorSequence();
   generator.next(); // n = yield를 실행하고 기다린다
 
-  // 이벤트 리스너 
+  // 이벤트 리스너
   rl.on("line", (line) => {
     let done = generator.next(line).done; // 더 이상 yield가 없으면 true 리턴
     if (done) rl.close();

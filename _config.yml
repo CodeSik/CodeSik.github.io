@@ -210,5 +210,54 @@ defaults:
       category: "Life"
       optimized_image: "/assets/img/default_imgs/thumb/etc.png"
 
+  -
+    scope:
+      path: "_posts/Algorithm" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Algorithm"
+      optimized_image: "/assets/img/default_imgs/thumb/algorithm.png"
+
+  -
+    scope:
+      path: "_posts/Env" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Env"
+      optimized_image: "/assets/img/default_imgs/thumb/til.png"
+
+  -
+    scope:
+      path: "_posts/Framework" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Framework"
+      optimized_image: "/assets/img/default_imgs/thumb/til.png"
+
+  -
+    scope:
+      path: "_posts/Network" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Network"
+      optimized_image: "/assets/img/default_imgs/thumb/til.png"
+
+  -
+    scope:
+      path: "_posts/OS" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "OS"
+      optimized_image: "/assets/img/default_imgs/thumb/til.png"
+
+  -
+    scope:
+      path: "_posts/Tip" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Tip"
+      optimized_image: "/assets/img/default_imgs/thumb/tips.png"
+
+
 # Theme
 # version: v3.1.0

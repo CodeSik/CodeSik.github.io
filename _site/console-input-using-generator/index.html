@@ -216,7 +216,7 @@ January 6, 2021
     <span class="na">input</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">,</span>
     <span class="na">output</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span><span class="p">,</span>
   <span class="p">});</span>
-  <span class="nx">rl</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">line</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">line</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+  <span class="nx">rl</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">line</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">line</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="c1">// 한 줄씩 입력받은 후 실행할 코드</span>
       <span class="nx">rl</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span> <span class="c1">// 필수. 없으면 입력을 무한히 받는다</span>
   <span class="p">});</span>
@@ -270,7 +270,7 @@ January 6, 2021
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">let</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">k</span><span class="p">;</span>
-  
+
   <span class="c1">// 입력 한번에 변수 하나씩 저장하는 함수</span>
   <span class="kd">const</span> <span class="nx">generatorSequence</span> <span class="o">=</span> <span class="kd">function</span><span class="o">*</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">n</span> <span class="o">=</span> <span class="k">yield</span><span class="p">;</span>
@@ -282,7 +282,7 @@ January 6, 2021
   <span class="kd">const</span> <span class="nx">generator</span> <span class="o">=</span> <span class="nx">generatorSequence</span><span class="p">();</span>
   <span class="nx">generator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span> <span class="c1">// n = yield를 실행하고 기다린다</span>
 
-  <span class="c1">// 이벤트 리스너 </span>
+  <span class="c1">// 이벤트 리스너</span>
   <span class="nx">rl</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">line</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">line</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">done</span> <span class="o">=</span> <span class="nx">generator</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">line</span><span class="p">).</span><span class="nx">done</span><span class="p">;</span> <span class="c1">// 더 이상 yield가 없으면 true 리턴</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="nx">rl</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
@@ -774,7 +774,7 @@ readline을 이용하여 이벤트 형식으로 입력받는 방법이다. 입�
     input: process.stdin,
     output: process.stdout,
   });
-  rl.on(&quot;line&quot;, (line) =&amp;gt; { 
+  rl.on(&quot;line&quot;, (line) =&amp;gt; {
       // 한 줄씩 입력받은 후 실행할 코드
       rl.close(); // 필수. 없으면 입력을 무한히 받는다
   });
@@ -828,7 +828,7 @@ readline을 이용하여 이벤트 형식으로 입력받는 방법이다. 입�
 
 
   let n, m, k;
-  
+
   // 입력 한번에 변수 하나씩 저장하는 함수
   const generatorSequence = function* () {
     n = yield;
@@ -840,7 +840,7 @@ readline을 이용하여 이벤트 형식으로 입력받는 방법이다. 입�
   const generator = generatorSequence();
   generator.next(); // n = yield를 실행하고 기다린다
 
-  // 이벤트 리스너 
+  // 이벤트 리스너
   rl.on(&quot;line&quot;, (line) =&amp;gt; {
     let done = generator.next(line).done; // 더 이상 yield가 없으면 true 리턴
     if (done) rl.close();
@@ -917,7 +917,7 @@ k = input()
   모던자바스크립트:제너레이터 https://ko.javascript.info/generators
 
 ",
-            "wordcount": "1150",
+            "wordcount": "1149",
             "inLanguage": "ko",
             "dateCreated": "2021-01-06/",
             "datePublished": "2021-01-06/",
@@ -946,8 +946,8 @@ k = input()
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "Life",
-            "articleSection": "Life",
+            "genre": "일상",
+            "articleSection": "일상",
             "keywords": [""]
         }
         </script>
