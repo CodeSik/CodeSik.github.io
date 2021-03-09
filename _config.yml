@@ -114,7 +114,7 @@ paginate_content:
 
 # SASS
 sass:
-  style: compressed_2
+  style: compressed
 
 # Plugins
 plugins:
@@ -147,6 +147,7 @@ defaults:
       category: "undefined"
       math: true
       paginate: true
+      optimized_image: "/assets/img/default_imgs/blog-image.png
   -
     scope:
       path: "_posts/algorithms" # an empty string here means all files in the project
