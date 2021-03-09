@@ -1,0 +1,38 @@
+# index page sections
+# custom following lines to edit your index page
+- id: about-me
+  i18n: nav.about_me
+  name: 프로필
+  tpl: about.html
+  css:
+
+- id: career
+  i18n: nav.career
+  name: 이력사항
+  tpl: career.html
+  css: timeline
+
+- id: skills
+  i18n: nav.skills
+  name: 스킬
+  tpl: skills.html
+  css: team
+
+- id: projects
+  i18n: nav.projects
+  name: 프로젝트
+  tpl: projects.html
+  css: project
+
+- id: blog
+  i18n: nav.blog
+  name: 포스트
+  tpl: blog.html
+  page: category/
+  css: testimonials navy-section
+
+- id: links
+  i18n: nav.link
+  name: 링크
+  tpl: links.html
+  css: contact

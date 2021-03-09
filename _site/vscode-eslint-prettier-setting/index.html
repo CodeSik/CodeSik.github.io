@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>vscode에 eslint와 prettier 설정하기 | CodeSik의 개발 공방</title>
+    <meta name="description" content="eslint airbnb-base와 prettier로 코드 규약을 맞추고 스타일링하는 방법을 정리한다">
+    
+        <meta name="keywords" content="">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="vscode에 eslint와 prettier 설정하기 | CodeSik의 개발 공방">
+    <meta name="twitter:description" content="eslint airbnb-base와 prettier로 코드 규약을 맞추고 스타일링하는 방법을 정리한다">
+    <meta property="twitter:image:src" content="https://res.cloudinary.com/dtttkj2mc/image/upload/t_post_img/v1607415891/etc/ESLint-icon_xmsigz.png">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="http://localhost:4000/vscode-eslint-prettier-setting/">
+    <meta property="og:title" content="vscode에 eslint와 prettier 설정하기 | CodeSik의 개발 공방">
+    <meta property="og:image" content="https://res.cloudinary.com/dtttkj2mc/image/upload/t_post_img/v1607415891/etc/ESLint-icon_xmsigz.png">
+    <meta property="og:description" content="eslint airbnb-base와 prettier로 코드 규약을 맞추고 스타일링하는 방법을 정리한다">
+    <meta property="og:site_name" content="CodeSik의 개발 공방 Tech Blog">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="CodeSik의 개발 공방">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+    
+    <!-- google analytics -->
+    <meta name="google-site-verification" content="z4OQUypXRVSm_GIpw1UUT_TNmy3eFdXI6hkzbfprBt4" />
+    
+    <!-- naver webmaster -->
+    <meta name="naver-site-verification" content="efc138ea2f24a72a7630575c0393fb4863cb9160" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="http://localhost:4000/vscode-eslint-prettier-setting/">
+    <link rel="alternate" type="application/rss+xml" title="CodeSik의 개발 공방 Tech Blog" href="http://localhost:4000/feed.xml" />
+
+    <!-- Include extra styles -->
+    
+
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-last-modified" viewBox="0 0 24 24"><defs><path d="M0 0h24v24H0z"/></defs><path d="M11 8.75v3.68c0 .35.19.68.49.86l3.12 1.85c.36.21.82.09 1.03-.26.21-.36.1-.82-.26-1.03l-2.87-1.71v-3.4c-.01-.4-.35-.74-.76-.74-.41 0-.75.34-.75.75zm10 .75V4.21c0-.45-.54-.67-.85-.35l-1.78 1.78c-1.81-1.81-4.39-2.85-7.21-2.6-4.19.38-7.64 3.75-8.1 7.94C2.46 16.4 6.69 21 12 21c4.59 0 8.38-3.44 8.93-7.88.07-.6-.4-1.12-1-1.12-.5 0-.92.37-.98.86-.43 3.49-3.44 6.19-7.05 6.14-3.71-.05-6.84-3.18-6.9-6.9C4.94 8.2 8.11 5 12 5c1.93 0 3.68.79 4.95 2.05l-2.09 2.09c-.32.32-.1.86.35.86h5.29c.28 0 .5-.22.5-.5z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol><symbol id="icon-star" viewBox="0 0 48 48"><path fill="currentColor" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ffffff" d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"/></symbol><symbol id="icon-read" viewBox="0 0 32 32"><path fill="currentColor" d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"></path></symbol><symbol id="icon-tistory" viewBox="0 0 459 459"><path d="M229.5,0C102.75,0,0,102.75,0,229.5S102.75,459,229.5,459,459,356.25,459,229.5,356.25,0,229.5,0ZM130.21,191.45a39.57,39.57,0,1,1,39.56-39.57A39.58,39.58,0,0,1,130.21,191.45ZM229.5,390a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,390Zm0-99.29a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,290.74Zm0-99.29a39.57,39.57,0,1,1,39.56-39.57A39.57,39.57,0,0,1,229.5,191.45Zm99.29,0a39.57,39.57,0,1,1,39.57-39.57A39.57,39.57,0,0,1,328.79,191.45Z"/></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+                CodeSik의 개발 공방 <span class="version"></span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+    
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/category">Category</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/tags">Tags</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+
+
+        <section class="post one-column">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2020-12-07T07:55:45+09:00">
+                            
+
+
+December 7, 2020
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>9 min to read</span>
+                    <!-- last-updated -->
+                    <span class = "last-modified">
+                        <svg id="last-modified" class="icon-last-modified"><use xlink:href="#icon-last-modified"></use></svg>
+                        <span >last modified at </span>
+                    </span>
+                </p>
+                <h1 class="post-title">vscode에 eslint와 prettier 설정하기</h1>
+                <p class="post-subtitle"></p>
+
+                
+                    <img src="https://res.cloudinary.com/dtttkj2mc/image/upload/t_post_img/v1607415891/etc/ESLint-icon_xmsigz.png" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+
+                <p class="callout"> 💡 개발환경을 eslint와 prettier로 설정해보자 </p>
+
+<h2 id="환경설정">환경설정</h2>
+
+<p>팀 프로젝트를 할 때, 우리는 제일 먼저 개발환경에 대한 명세부터 정한다. 어떤 OS를 쓸 것인가, 어떤 언어를 사용할 것인가, 얼마동안 개발할 것인가 하는 것들 말이다.<br />
+그리고 코딩 스타일에 대한 규칙도 정한다. 들여쓰기를 어떻게 할 것인가, <code class="language-plaintext highlighter-rouge">{</code> 를 코드 옆에 붙일 것인가 밑에 붙일 것인가, 그런 것들 말이다.<br />
+ESLint와 Prettier는 이러한 코드 규약을 지킬 수 있게 도와주는 도구다. 이 포스팅에서는 ESLint와 Prettier를 이용하여 일관성 있는 스타일로 코드를 작성하는 방법을 정리한다.</p>
+
+<p>우선 vscode와 node.js를 다운받는다.</p>
+
+<h3 id="vscode">vsCode</h3>
+
+<p>IDE는 vsCode를 이용할 것이다. 확장프로그램을 깔기도 쉽고, 가볍고 빠르기 때문이다.<br />
+vscode에 git을 연동하여 쓰거나, 바로 terminal을 이용하기도 쉽고, 테마도 이쁘다.<br />
+이 포스팅은 vscode를 기준으로 작성한다.</p>
+
+<h3 id="nodejs와-npm">node.js와 npm</h3>
+
+<p>이 프로젝트에서는 지금 당장  <code class="language-plaintext highlighter-rouge">node.js</code>를 이용하지 않는다. 하지만  <code class="language-plaintext highlighter-rouge">npm</code>은 필요하기 때문에 node.js는 설치해야 한다.</p>
+
+<p><a href="https://nodejs.org/ko/">node.js 홈페이지</a> 에서 최신 안정 버전(12.18.3LTS)를 다운받자. 다운받은 후 node와 npm이 잘 설치되었나 확인한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node <span class="nt">-v</span> <span class="c">#node.js 버전</span>
+<span class="nv">$ </span>npm <span class="nt">-v</span> <span class="c">#npm 버전</span>
+</code></pre></div></div>
+
+<p><strong>npm</strong><br />
+<code class="language-plaintext highlighter-rouge">npm</code>은 <em>패키지 관리 도구</em>라고 생각하면 된다. 개발의 편의성을 위해 여러 패키지를 사용할건데, 이 패키지들을 npm으로 다운받고 관리한다.</p>
+
+<p><strong>이 프로젝트에서 사용할 패키지</strong><br />
+이 프로젝트에서는 <code class="language-plaintext highlighter-rouge">ESLint</code>와 <code class="language-plaintext highlighter-rouge">Prettier</code>를 이용하여 코드 스타일을 통일한다.</p>
+
+<h3 id="npm-init">npm init</h3>
+
+<p>vscode에서 terminal을 열어 npm을 설정한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm init
+</code></pre></div></div>
+
+<p>npm init을 실행하면 <code class="language-plaintext highlighter-rouge">package.json</code>파일이 생성된다. 이 package.json에 프로젝트 의존성을 저장할 것이다. 무슨 말이냐면, package.json에 ‘이 프로젝트에는 어떤어떤 라이브러리와 패키지가 필요하다~’ 는 것을 적어놓는다는 말이다.</p>
+
+<p>그러면 나중에 해당 프로젝트를 사용할때</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>명령어를 이용하여 똑같은 개발환경을 구축하여 개발할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">package.json</code>외에 <code class="language-plaintext highlighter-rouge">package-lock.json</code> 도 있다.<br />
+package-lock도 package와 비슷한 기능을 한다. 프로젝트 의존성을 관리하는 일이다.<br />
+다른 점이 있다면 package는 <em>범위 기준</em>으로 의존성을 관리하고, lock은 구체적인 정보로 의존성을 관리한다는 것이다. (참고: 이 <a href="https://junwoo45.github.io/2019-10-02-package-lock/">포스팅</a>)</p>
+
+<p>따라서, package와 package-lock도 같이 리포에 올려둔다.</p>
+
+<h3 id="gitignore-추가">.<strong>gitignore 추가</strong></h3>
+
+<p>npm 으로 패키지들을 설치하다보면 node_modules 폴더가 커진다. git으로 일일히 변경사항을 추적하기보다, 아예 node_modules는 추적을 제외하는 편이 낫다.<br />
+어차피 다른 컴퓨터에서도 <code class="language-plaintext highlighter-rouge">package</code>과 <code class="language-plaintext highlighter-rouge">package-lock</code>만 있다면 같은 node_modules 폴더를 만들 수 있기 때문이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 생성하여 node_modules를 추적에서 제외한다. <code class="language-plaintext highlighter-rouge">.gitignore</code> 는 프로젝트 폴더에 생성한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// .gitignore</span>
+<span class="nx">node_modules</span>
+</code></pre></div></div>
+
+<h2 id="eslint">ESLint</h2>
+
+<h3 id="lint가-뭔가요">Lint가 뭔가요?</h3>
+
+<p>그동안 git에 띄어쓰기때문에 커밋을 새로 했던 경험이 있는가? 함수 옆에 {를 붙일지, 아래에 새 줄로 {로 붙일지 고민했던 적이 있는가?</p>
+
+<p>린트는 이런 고민을 줄여준다. 코드의 오류나 버그, 스타일 따위를 점검하는 것을 <a href="https://en.wikipedia.org/wiki/Lint_(software)">린트(Lint) 혹은 린터(Linter)</a>라고 부른다. 즉, 코드의 <em>포맷팅과 품질관리 도구</em>가 린트다.</p>
+
+<p>린트를 사용하면 좋은 점이 또 있다. C++이나 자바에서 그려줬던 빨간줄(이름을 모르겠다)를 사용할 수 있다는 것이다..아래 사진처럼.<br />
+abc()라는 함수를 선언하고, abbc()로 오타를 냈더니. 짜잔! 빨간줄로 알려준다! 더이상 js 빨간줄로 고통받지 말자…</p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417300/post/tips/eslint-prettier/redline_ozgl4f.png" alt="Redline" /></p>
+
+<h3 id="eslint-설치">ESLint 설치</h3>
+
+<p>ESLint를 설치해보자.</p>
+
+<p>vscode의 extensions에 <code class="language-plaintext highlighter-rouge">ESLint</code>를 검색하고 다운받는다.</p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417300/post/tips/eslint-prettier/eslint_plugin_t7x4fc.png" alt="eslint plugin" /></p>
+
+<p>그다음 npm으로 린트를 설치한다.</p>
+
+<p>린트는 개발(-d 옵션) 전반적으로 쓰이니 글로벌(-g 옵션)로 설치해도 되지만, 해당 프로젝트에만 사용한다면 글로벌 옵션을 빼고 설치하자.<br />
+vscode에서 <code class="language-plaintext highlighter-rouge">ctrl</code> + <code class="language-plaintext highlighter-rouge">~</code> (물결 위 ` 버튼) 혹은 <code class="language-plaintext highlighter-rouge">ctrl</code> + <code class="language-plaintext highlighter-rouge">j</code> 를 누르면 터미널이 열린다. 터미널에 다음과 같이 입력한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> <span class="nt">-d</span> eslint
+</code></pre></div></div>
+
+<p>설치가 끝난 후 init한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>eslint <span class="nt">--init</span>
+</code></pre></div></div>
+
+<p>터미널에서 여러가지 설정을 묻는다. 나는 아래 옵션대로 설정했다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- to check syntax and find problems
+- js modules
+- vue, react: none of these
+- typescript : no
+- browser
+- json
+</code></pre></div></div>
+
+<p>.eslintrc.json파일이 생겼다.</p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417300/post/tips/eslint-prettier/eslintrc.json_aqb7lo.png" alt="eslintrc" /></p>
+
+<h3 id="airbnb-포맷-설정하기">Airbnb 포맷 설정하기</h3>
+
+<p>ESLint는 린트 스타일을 설정할 수 있다. <code class="language-plaintext highlighter-rouge">;</code> 을 넣거나 빼거나, <code class="language-plaintext highlighter-rouge">dangling comma</code> 를 설정하는 등 스타일에 따라 린트를 다양하게 적용할 수 있다. 이번 포스팅에서는 ESLint의 다양한 포맷 중 <code class="language-plaintext highlighter-rouge">airbnb-base</code> 스타일을 적용한다. <a href="https://www.npmjs.com/package/eslint-config-airbnb-base">eslint-airbnb-base 페이지</a>를 참고하여 진행한다. react를 쓰지 않기때문에 airbnb가 아닌 base 버전으로 사용한다.</p>
+
+<p>npm 5버전 이상을 사용하고 있으므로, npx 명령어를 이용하여 모든 dependency를 한번에 설치한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npx install-peerdeps <span class="nt">--dev</span> eslint-config-airbnb-base
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">.eslintrc.json</code> 파일의 extends에 airbnb를 추가한다.  더불어, eslint를 사용하면서 에러가 나는 경우가 있으니 다른 설정들도 함께 수정했다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">.eslintrc.json</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"browser"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"node"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">에러</span><span class="w"> </span><span class="err">방지</span><span class="w"> </span><span class="err">위해</span><span class="w"> </span><span class="err">browswer</span><span class="p">,</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="err">둘다</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="nl">"es2020"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="err">//</span><span class="mi">2020-12-03</span><span class="w"> </span><span class="err">기준</span><span class="w"> </span><span class="mi">2021</span><span class="err">은</span><span class="w"> </span><span class="err">eslint가</span><span class="w"> </span><span class="err">안되는</span><span class="w"> </span><span class="err">오류가</span><span class="w"> </span><span class="err">있다</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"extends"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eslint:recommended"</span><span class="p">,</span><span class="w"> </span><span class="s2">"airbnb-base"</span><span class="p">],</span><span class="w"> </span><span class="err">//airbnb-base</span><span class="w"> </span><span class="err">포맷</span><span class="w"> </span><span class="err">사용</span><span class="w">
+    </span><span class="nl">"parserOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"ecmaVersion"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="err">//es</span><span class="mi">2020</span><span class="w">
+        </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"module"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="eslint-동작-확인">eslint 동작 확인</h3>
+
+<p>eslint가 잘 동작하는지 확인해본다.</p>
+
+<p>우선 포맷을 적용할 코드를 준비한다. 아래는 예시다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//test.js</span>
+<span class="kd">function</span> <span class="nx">init</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">single_q</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">double_q</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello world</span><span class="dl">"</span><span class="p">;</span>
+	    <span class="kd">const</span> <span class="nx">no_semi</span> <span class="o">=</span> <span class="mi">500</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world!</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">init</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>터미널을 열고 eslint를 실행한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>eslint lintTest.js <span class="nt">--fix</span>
+</code></pre></div></div>
+
+<p>파일 코드 스타일이 깔끔하게 통일된다.</p>
+
+<h3 id="eslint-적용이-안된다면">ESLint 적용이 안된다면?</h3>
+
+<blockquote>
+  <p><em>“ESLint is disabled since its execution has not been approved or denied yet. Use the light bulb menu to open the approval dialog.”</em></p>
+</blockquote>
+
+<p>라며 파란 전구가 뜰 수가 있다. vscode를 사용하는 경우 eslint 사용을 허가해주어야 하기 때문이다.<br />
+그럴땐 파란전구를 눌러서 뜨는 팝업창에서 allow를 누르면 해결된다.</p>
+
+<h2 id="prettier">Prettier</h2>
+
+<p>이름에서부터 알 수 있듯 Prettier는 코드를 더 예쁘게 만든다.</p>
+
+<p>ESLint는 예쁘게하기 + 코드 악취 제거라면 Prettier는 그냥 예쁘게 만드는 용도로 쓴다. 린트에서도 포맷팅 기능이 있지만, 프리티어를 더 많이 쓴다.</p>
+
+<h3 id="prettier-설치">Prettier 설치</h3>
+
+<p>extensions에서 prettier를 검색하여 설치한다.</p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417300/post/tips/eslint-prettier/prettier_plugin_lybhgl.png" alt="prettier-plugin" /></p>
+
+<p>프리티어도 개발 전반적으로 사용하기 때문에, -d와 -g 옵션을 주고 설치한다. 물론 프로젝트에서만 사용할거라면 -g옵션을 생략해도 된다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> <span class="nt">--save-exact</span> prettier
+</code></pre></div></div>
+
+<h3 id="린트에-프리티어-끼얹기-생략가능">린트에 프리티어 끼얹기 (생략가능)</h3>
+
+<p>린트는 자바스크립트 문법을 검사하고, 코드 포맷팅은 프리티어가 맡게한다. ESLint가 프린티어의 형식에 맞춰 린팅하도록 해보자. 이 옵션을 생략하고 바로 prettier extension만 사용해도 된다.<br />
+프리티어와 프리티어 플러그인을 설치한다. 플러그인은 eslint에 끼얹는 용도다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>eslint-plugin-prettier@latest <span class="nt">--save-dev</span> <span class="nt">-g</span> 
+<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> eslint-config-prettier <span class="c"># prettier와 겹치는 eslint 룰 삭제</span>
+<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> eslint-plugin-prettier <span class="c"># eslint 기본 포맷 대신 프리티어 룰과 동일한 포매팅을 이용함</span>
+
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">.eslintrc</code>에 프리티어 확장팩을 설정한다. 뒤에 오는 설정이 앞을 덮어쓰기때문에 꼭 prettier가 뒤로 와야 한다!</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">estlintrc.json</span><span class="w">
+</span><span class="nl">"extends"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eslint:recommended"</span><span class="p">,</span><span class="s2">"airbnb-base"</span><span class="p">,</span><span class="w"> </span><span class="s2">"plugin:prettier/recommended"</span><span class="p">]</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+
+<p class="callout">⚠️ Vscode에서 .prettierrc와 eslint(prettier/prettier)의 싱크가 맞지 않는 문제가 발생하는 경우</p>
+
+<p>vscode를 이용할 떄, prettierrc는 수정했으나 eslint에는 반영되지 않는 경우가 있다. 이런 경우, vscode를 재시작하면 변경된 prettierrc로 잘 적용된다. 참고 링크 (<a href="https://github.com/prettier/eslint-plugin-prettier/issues/103">https://github.com/prettier/eslint-plugin-prettier/issues/103</a>)</p>
+
+<p><strong>린트에 prettier 적용 확인하기</strong></p>
+
+<p>린트를 사용하는 방법과 같다. 아래 명령어를 수행하고 코드가 포맷팅되는지 확인한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eslint lintTest.js <span class="nt">--fix</span> <span class="c"># 린트에 프리티어 확장을 설치한 경우</span>
+prettier <span class="nt">--check</span> <span class="nb">.</span> <span class="c"># 프리티어로 체크했을때 문제가 있는 파일 목록 출력</span>
+prettier <span class="nt">--write</span>  test.js <span class="c"># test.js파일을 포맷팅해서 덮어쓴다</span>
+</code></pre></div></div>
+
+<h3 id="prettierrc-만들기">.prettierrc 만들기</h3>
+
+<p>린트의 설정은 eslintrc에서 세팅했다. 그렇다면 prettier의 설정은 어디서 수정할까? 그렇다. <code class="language-plaintext highlighter-rouge">.prettierrc</code> 파일이다. 이 파일도 json으로 만들수 있지만 js로 만들었다. 주석을 넣고싶었기 때문이다.</p>
+
+<p>.prettierrc.js 파일을 만들어 아래와 같은 내용을 넣는다. (내용참고: <a href="https://velog.io/@jonmad/%EC%8B%9C%EA%B0%84%EC%9D%84-%EC%A4%84%EC%9D%B4%EC%9E%90-React-Vscode-%EC%B4%88%EA%B8%B0%EC%84%B8%ED%8C%85">시간을-줄이자-React-Vscode-초기세팅</a>)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// .prettierrc.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">singleQuote</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="c1">// 문자열은 홑따옴표로 formatting</span>
+    <span class="na">semi</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="c1">//코드 마지막에 세미콜른이 있게 formatting</span>
+    <span class="na">useTabs</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="c1">//탭의 사용을 금하고 스페이스바 사용으로 대체하게 formatting</span>
+    <span class="na">tabWidth</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="c1">// 들여쓰기 너비는 2칸</span>
+    <span class="na">trailingComma</span><span class="p">:</span> <span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span>
+    <span class="c1">// 자세한 설명은 구글링이 짱이긴하나 객체나 배열 키:값 뒤에 항상 콤마를 붙히도록 	  	//formatting</span>
+    <span class="na">printWidth</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="c1">// 코드 한줄이 maximum 80칸</span>
+    <span class="na">arrowParens</span><span class="p">:</span> <span class="dl">'</span><span class="s1">avoid</span><span class="dl">'</span><span class="p">,</span>
+    <span class="c1">// 화살표 함수가 하나의 매개변수를 받을 때 괄호를 생략하게 formatting</span>
+    <span class="na">endOfLine</span><span class="p">:</span> <span class="dl">"</span><span class="s2">auto</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// windows에 뜨는 'Delete cr' 에러 해결</span>
+  <span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="vscode-확장프로그램-설정">VSCode 확장프로그램 설정</h2>
+
+<p>ESLint도 코드 포맷팅 기능이 있고, 프리티어도 있다. 둘이 충돌하지 않게 겹치는부분은 ESLint의 기능을 꺼준다.</p>
+
+<p><strong>ESLint - Setting (단축키 ctrl+,)</strong></p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417300/post/tips/eslint-prettier/eslint_setting_fpgptn.png" alt="eslint setting" /></p>
+
+<p>vscode에서 기본 format을 prettier로 설정한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. ctrl + <span class="nb">shift</span> + p를 눌러 팔레트를 연다.
+2. format document with ~
+3. config default formatter
+4. prettier 선택
+</code></pre></div></div>
+
+<p>이제 eslint 명령어를 입력할 필요 없이 vscode의 <strong>format document</strong>(단축키 shift+alt+F)로 포매팅 할 수 있다.</p>
+
+<h3 id="testjs-작성">test.js 작성</h3>
+
+<p>프리티어와 린트가 잘 작동하는지 알아보자.</p>
+
+<p>test.js파일을 만든다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">init</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">single_q</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">double_q</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello world</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">no_semi</span> <span class="o">=</span> <span class="mi">500</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world!</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">init</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>세미콜론이 빠지고,  어떤 문자열은 따옴표고 어떤건 쌍따옴표로 적는 등 포맷을 지키지 않은 코드를 준비했다.<br />
+palette에서 format document - prettier를 하면 코드가 정렬된다.</p>
+
+<h3 id="저장시-코드-자동-포맷팅">저장시 코드 자동 포맷팅</h3>
+
+<p>매번 이렇게 포맷팅하기 귀찮다. 저장시 알아서 포맷팅하게 설정하자.</p>
+
+<p>ESLint 환경설정에서 <em>code actions on save</em> 를 설정한다.</p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417300/post/tips/eslint-prettier/onsave_nx6r5o.png" alt="code action on save" /></p>
+
+<p>이제 저장버튼을 누를 때마다 linter가 오류를 검사한다.</p>
+
+<p>그리고 Format On Save도 체크한다. 이제 프리티어가 저장할때마다 format해줄 것이다.</p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417300/post/tips/eslint-prettier/formatOnsave_ejilnd.png" alt="format on save" /></p>
+
+<p><img src="https://res.cloudinary.com/dtttkj2mc/image/upload/v1607417301/post/tips/eslint-prettier/after_format_bvbmux.png" alt="formatted" /></p>
+
+<h3 id="경고-수준-바꾸기">경고 수준 바꾸기</h3>
+
+<p>eslint가 빨간줄을 쳐주는건 좋은데, 문법 오류든, 선언만 해두고 안 쓴 변수든 모두 빨간줄로 알려준다.<br />
+경고 수준을 바꿔 알아보기 편하게 만들자.</p>
+
+<p>.eslintrc.json의 rule를 아래와 같이 변경한다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"no-unused-vars"</span><span class="p">:</span><span class="w"> </span><span class="s2">"warn"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>이제 오류가 아닌 경고로 표시된다.</p>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+
+            <!-- side toc -->
+            
+            <aside class="side-toc">
+                <h2></h2>
+                <!-- Add your table of contents here -->
+
+<ul id="my_toc" class="inline_toc">
+  <li class="toc_item"><a href="#환경설정">환경설정</a>
+    <ul>
+      <li class="toc_item"><a href="#vscode">vsCode</a></li>
+      <li class="toc_item"><a href="#nodejs와-npm">node.js와 npm</a></li>
+      <li class="toc_item"><a href="#npm-init">npm init</a></li>
+      <li class="toc_item"><a href="#gitignore-추가">.gitignore 추가</a></li>
+    </ul>
+  </li>
+  <li class="toc_item"><a href="#eslint">ESLint</a>
+    <ul>
+      <li class="toc_item"><a href="#lint가-뭔가요">Lint가 뭔가요?</a></li>
+      <li class="toc_item"><a href="#eslint-설치">ESLint 설치</a></li>
+      <li class="toc_item"><a href="#airbnb-포맷-설정하기">Airbnb 포맷 설정하기</a></li>
+      <li class="toc_item"><a href="#eslint-동작-확인">eslint 동작 확인</a></li>
+      <li class="toc_item"><a href="#eslint-적용이-안된다면">ESLint 적용이 안된다면?</a></li>
+    </ul>
+  </li>
+  <li class="toc_item"><a href="#prettier">Prettier</a>
+    <ul>
+      <li class="toc_item"><a href="#prettier-설치">Prettier 설치</a></li>
+      <li class="toc_item"><a href="#린트에-프리티어-끼얹기-생략가능">린트에 프리티어 끼얹기 (생략가능)</a></li>
+      <li class="toc_item"><a href="#prettierrc-만들기">.prettierrc 만들기</a></li>
+    </ul>
+  </li>
+  <li class="toc_item"><a href="#vscode-확장프로그램-설정">VSCode 확장프로그램 설정</a>
+    <ul>
+      <li class="toc_item"><a href="#testjs-작성">test.js 작성</a></li>
+      <li class="toc_item"><a href="#저장시-코드-자동-포맷팅">저장시 코드 자동 포맷팅</a></li>
+      <li class="toc_item"><a href="#경고-수준-바꾸기">경고 수준 바꾸기</a></li>
+    </ul>
+  </li>
+</ul>
+
+<svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+</svg>
+
+
+
+<script>
+    window.onload = function() {
+
+// var toc = document.querySelector( '.toc' );
+var toc = document.querySelector( '.inline_toc' );
+if(toc===null) return;
+
+var tocPath = document.querySelector( '.toc-marker path' );
+var tocItems;
+
+// Factor of screen size that the element must cross
+// before it's considered visible
+var TOP_MARGIN = 0.1,
+    BOTTOM_MARGIN = 0.2;
+
+var pathLength;
+
+var lastPathStart,
+    lastPathEnd;
+
+window.addEventListener( 'resize', drawPath, false );
+window.addEventListener( 'scroll', sync, false );
+
+drawPath();
+
+function drawPath() {
+
+    tocItems = [].slice.call( toc.querySelectorAll( 'li' ) );
+
+    // Cache element references and measurements
+    tocItems = tocItems.map( function( item ) {
+        var anchor = item.querySelector( 'a' );
+        var target = document.getElementById( anchor.getAttribute( 'href' ).slice( 1 ) );
+
+        return {
+            listItem: item,
+            anchor: anchor,
+            target: target
+        };
+    } );
+
+    // Remove missing targets
+    tocItems = tocItems.filter( function( item ) {
+        return !!item.target;
+    } );
+
+    var path = [];
+    var pathIndent;
+
+    tocItems.forEach( function( item, i ) {
+
+        var x = item.anchor.offsetLeft - 5,
+            y = item.anchor.offsetTop,
+            height = item.anchor.offsetHeight;
+
+        if( i === 0 ) {
+            path.push( 'M', x, y, 'L', x, y + height );
+            item.pathStart = 0;
+        }
+        else {
+            // Draw an additional line when there's a change in
+            // indent levels
+            if( pathIndent !== x ) path.push( 'L', pathIndent, y );
+
+            path.push( 'L', x, y );
+
+            // Set the current path so that we can measure it
+            tocPath.setAttribute( 'd', path.join( ' ' ) );
+            item.pathStart = tocPath.getTotalLength() || 0;
+
+            path.push( 'L', x, y + height );
+        }
+
+        pathIndent = x;
+
+        tocPath.setAttribute( 'd', path.join( ' ' ) );
+        item.pathEnd = tocPath.getTotalLength();
+
+    } );
+
+    pathLength = tocPath.getTotalLength();
+
+    sync();
+
+}
+
+function sync() {
+
+    var windowHeight = window.innerHeight;
+
+    var pathStart = pathLength,
+        pathEnd = 0;
+
+    var visibleItems = 0;
+
+    tocItems.forEach( function( item ) {
+
+        var targetBounds = item.target.getBoundingClientRect();
+
+        if( targetBounds.bottom > windowHeight * TOP_MARGIN && targetBounds.top < windowHeight * ( 1 - BOTTOM_MARGIN ) ) {
+            pathStart = Math.min( item.pathStart, pathStart );
+            pathEnd = Math.max( item.pathEnd, pathEnd );
+
+            visibleItems += 1;
+
+            item.listItem.classList.add( 'visible' );
+        }
+        else {
+            item.listItem.classList.remove( 'visible' );
+        }
+
+    } );
+
+    // Specify the visible path or hide the path altogether
+    // if there are no visible items
+    if( visibleItems > 0 && pathStart < pathEnd ) {
+        if( pathStart !== lastPathStart || pathEnd !== lastPathEnd ) {
+            tocPath.setAttribute( 'stroke-dashoffset', '1' );
+            tocPath.setAttribute( 'stroke-dasharray', '1, '+ pathStart +', '+ ( pathEnd - pathStart ) +', ' + pathLength );
+            tocPath.setAttribute( 'opacity', 1 );
+        }
+    }
+    else {
+        tocPath.setAttribute( 'opacity', 0 );
+    }
+
+    lastPathStart = pathStart;
+    lastPathEnd = pathEnd;
+
+}
+
+};
+</script>
+            </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="9">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/2020-12-08-TIL/" class="post-preview">
+        <div class="image">
+            
+                <img src="https://user-images.githubusercontent.com/26290571/101482948-ceab1f00-399a-11eb-9e2b-34ead999dfa6.png">
+            
+        </div>
+        <h3 class="title">2020-12-08 TIL</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;eslint airbnb-base와 prettier로 코드 규약을 맞추고 스타일링하는 방법을 정리한다&quot;%20http://localhost:4000/vscode-eslint-prettier-setting/%20via%20&#64;&hashtags="
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/vscode-eslint-prettier-setting/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+</section>
+
+        
+
+  <section class="author">
+    <div class="details">
+      
+        <img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Kim Sun Jeong">
+      
+      <p class="def">Author</p>
+      <h3 class="name">
+        <a href="/authors/sunmon/">Kim Sun Jeong</a>
+      </h3>
+      <p class="desc">game lover.</p>
+      <p>
+        
+          <a href="https://github.com/sunmon" title="Github">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        
+        
+        
+        
+        
+        
+          <a href="https://www.linkedin.com/in/sunmon" title="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        
+        
+          <a href="https://conservative-vector.tistory.com" title="Tistory">
+            <svg><use xlink:href="#icon-tistory"></use></svg>
+          </a>
+        
+      </p>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Kim Sun Jeong",
+      
+      "image": "/assets/img/uploads/profile.png",
+      
+      "jobTitle": "Frontend Developer",
+      "url": "http://localhost:4000/authors/sunmon/",
+      "sameAs": [
+        "https://github.com/sunmon","https://www.linkedin.com/in/sunmon","https://conservative-vector.tistory.com/"
+      ]
+  }
+  </script>
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'codesik-github-io-1';
+        var disqus_title = '';
+        var disqus_url = '/vscode-eslint-prettier-setting/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
+        <footer>
+  <p>
+    
+      <a href="https://github.com/codesik" title="Github">
+        <svg><use xlink:href="#icon-github"></use></svg>
+      </a>
+    
+    
+      <a href="https://www.facebook.com/서건식" title="Facebook">
+        <svg><use xlink:href="#icon-facebook"></use></svg>
+      </a>
+    
+    
+    
+    
+      <a href="https://www.instagram.com/sik_gn" title="Instagram">
+        <svg><use xlink:href="#icon-instagram"></use></svg>
+      </a>
+    
+    
+    
+  </p>
+
+  <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/category">Category</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/tags">Tags</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "Organization",
+"name": "CodeSik의 개발 공방",
+"description": "Tech Blog Web, Server, Computer Science",
+"url": "http://localhost:4000/",
+"logo": {
+    "@type": "ImageObject",
+    "url": "http://localhost:4000/assets/img/icons/mediumtile.png",
+    "width": "600",
+    "height": "315"
+},
+"sameAs": [
+  "https://github.com/codesik","https://www.facebook.com/서건식","https://www.instagram.com/sik_gn"
+]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-191544283-1"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-191544283-1');
+  }
+</script>
+  
+
+
+    <!-- Include extra scripts -->
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+                }
+            };
+        </script>
+        <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "vscode에 eslint와 prettier 설정하기",
+            "headline": "",
+            "description": "eslint airbnb-base와 prettier로 코드 규약을 맞추고 스타일링하는 방법을 정리한다",
+            "image": "https://res.cloudinary.com/dtttkj2mc/image/upload/t_post_img/v1607415891/etc/ESLint-icon_xmsigz.png",
+            "url": "http://localhost:4000/vscode-eslint-prettier-setting/",
+            "articleBody": " 💡 개발환경을 eslint와 prettier로 설정해보자 
+
+환경설정
+
+팀 프로젝트를 할 때, 우리는 제일 먼저 개발환경에 대한 명세부터 정한다. 어떤 OS를 쓸 것인가, 어떤 언어를 사용할 것인가, 얼마동안 개발할 것인가 하는 것들 말이다.
+그리고 코딩 스타일에 대한 규칙도 정한다. 들여쓰기를 어떻게 할 것인가, { 를 코드 옆에 붙일 것인가 밑에 붙일 것인가, 그런 것들 말이다.
+ESLint와 Prettier는 이러한 코드 규약을 지킬 수 있게 도와주는 도구다. 이 포스팅에서는 ESLint와 Prettier를 이용하여 일관성 있는 스타일로 코드를 작성하는 방법을 정리한다.
+
+우선 vscode와 node.js를 다운받는다.
+
+vsCode
+
+IDE는 vsCode를 이용할 것이다. 확장프로그램을 깔기도 쉽고, 가볍고 빠르기 때문이다.
+vscode에 git을 연동하여 쓰거나, 바로 terminal을 이용하기도 쉽고, 테마도 이쁘다.
+이 포스팅은 vscode를 기준으로 작성한다.
+
+node.js와 npm
+
+이 프로젝트에서는 지금 당장  node.js를 이용하지 않는다. 하지만  npm은 필요하기 때문에 node.js는 설치해야 한다.
+
+node.js 홈페이지 에서 최신 안정 버전(12.18.3LTS)를 다운받자. 다운받은 후 node와 npm이 잘 설치되었나 확인한다.
+
+$ node -v #node.js 버전
+$ npm -v #npm 버전
+
+
+npm
+npm은 패키지 관리 도구라고 생각하면 된다. 개발의 편의성을 위해 여러 패키지를 사용할건데, 이 패키지들을 npm으로 다운받고 관리한다.
+
+이 프로젝트에서 사용할 패키지
+이 프로젝트에서는 ESLint와 Prettier를 이용하여 코드 스타일을 통일한다.
+
+npm init
+
+vscode에서 terminal을 열어 npm을 설정한다.
+
+$ npm init
+
+
+npm init을 실행하면 package.json파일이 생성된다. 이 package.json에 프로젝트 의존성을 저장할 것이다. 무슨 말이냐면, package.json에 ‘이 프로젝트에는 어떤어떤 라이브러리와 패키지가 필요하다~’ 는 것을 적어놓는다는 말이다.
+
+그러면 나중에 해당 프로젝트를 사용할때
+
+$ npm install
+
+
+명령어를 이용하여 똑같은 개발환경을 구축하여 개발할 수 있다.
+
+package.json외에 package-lock.json 도 있다.
+package-lock도 package와 비슷한 기능을 한다. 프로젝트 의존성을 관리하는 일이다.
+다른 점이 있다면 package는 범위 기준으로 의존성을 관리하고, lock은 구체적인 정보로 의존성을 관리한다는 것이다. (참고: 이 포스팅)
+
+따라서, package와 package-lock도 같이 리포에 올려둔다.
+
+.gitignore 추가
+
+npm 으로 패키지들을 설치하다보면 node_modules 폴더가 커진다. git으로 일일히 변경사항을 추적하기보다, 아예 node_modules는 추적을 제외하는 편이 낫다.
+어차피 다른 컴퓨터에서도 package과 package-lock만 있다면 같은 node_modules 폴더를 만들 수 있기 때문이다.
+
+.gitignore 파일을 생성하여 node_modules를 추적에서 제외한다. .gitignore 는 프로젝트 폴더에 생성한다.
+
+// .gitignore
+node_modules
+
+
+ESLint
+
+Lint가 뭔가요?
+
+그동안 git에 띄어쓰기때문에 커밋을 새로 했던 경험이 있는가? 함수 옆에 {를 붙일지, 아래에 새 줄로 {로 붙일지 고민했던 적이 있는가?
+
+린트는 이런 고민을 줄여준다. 코드의 오류나 버그, 스타일 따위를 점검하는 것을 린트(Lint) 혹은 린터(Linter)라고 부른다. 즉, 코드의 포맷팅과 품질관리 도구가 린트다.
+
+린트를 사용하면 좋은 점이 또 있다. C++이나 자바에서 그려줬던 빨간줄(이름을 모르겠다)를 사용할 수 있다는 것이다..아래 사진처럼.
+abc()라는 함수를 선언하고, abbc()로 오타를 냈더니. 짜잔! 빨간줄로 알려준다! 더이상 js 빨간줄로 고통받지 말자…
+
+
+
+ESLint 설치
+
+ESLint를 설치해보자.
+
+vscode의 extensions에 ESLint를 검색하고 다운받는다.
+
+
+
+그다음 npm으로 린트를 설치한다.
+
+린트는 개발(-d 옵션) 전반적으로 쓰이니 글로벌(-g 옵션)로 설치해도 되지만, 해당 프로젝트에만 사용한다면 글로벌 옵션을 빼고 설치하자.
+vscode에서 ctrl + ~ (물결 위 ` 버튼) 혹은 ctrl + j 를 누르면 터미널이 열린다. 터미널에 다음과 같이 입력한다.
+
+$ npm install -g -d eslint
+
+
+설치가 끝난 후 init한다.
+
+$ eslint --init
+
+
+터미널에서 여러가지 설정을 묻는다. 나는 아래 옵션대로 설정했다.
+
+- to check syntax and find problems
+- js modules
+- vue, react: none of these
+- typescript : no
+- browser
+- json
+
+
+.eslintrc.json파일이 생겼다.
+
+
+
+Airbnb 포맷 설정하기
+
+ESLint는 린트 스타일을 설정할 수 있다. ; 을 넣거나 빼거나, dangling comma 를 설정하는 등 스타일에 따라 린트를 다양하게 적용할 수 있다. 이번 포스팅에서는 ESLint의 다양한 포맷 중 airbnb-base 스타일을 적용한다. eslint-airbnb-base 페이지를 참고하여 진행한다. react를 쓰지 않기때문에 airbnb가 아닌 base 버전으로 사용한다.
+
+npm 5버전 이상을 사용하고 있으므로, npx 명령어를 이용하여 모든 dependency를 한번에 설치한다.
+
+$ npx install-peerdeps --dev eslint-config-airbnb-base
+
+
+.eslintrc.json 파일의 extends에 airbnb를 추가한다.  더불어, eslint를 사용하면서 에러가 나는 경우가 있으니 다른 설정들도 함께 수정했다.
+
+// .eslintrc.json
+{
+    &quot;env&quot;: {
+        &quot;browser&quot;: true,
+        &quot;node&quot;: true,  // 에러 방지 위해 browswer, node 둘다 true
+        &quot;es2020&quot;: true  //2020-12-03 기준 2021은 eslint가 안되는 오류가 있다
+    },
+    &quot;extends&quot;: [&quot;eslint:recommended&quot;, &quot;airbnb-base&quot;], //airbnb-base 포맷 사용
+    &quot;parserOptions&quot;: {
+        &quot;ecmaVersion&quot;: 11, //es2020
+        &quot;sourceType&quot;: &quot;module&quot;
+    },
+    &quot;rules&quot;: {
+    }
+}
+
+
+eslint 동작 확인
+
+eslint가 잘 동작하는지 확인해본다.
+
+우선 포맷을 적용할 코드를 준비한다. 아래는 예시다.
+
+//test.js
+function init(){
+    const single_q = 'hello world';
+    const double_q = &quot;hello world&quot;;
+	    const no_semi = 500
+		console.log('hello world!')
+}
+init();
+
+
+터미널을 열고 eslint를 실행한다.
+
+$ eslint lintTest.js --fix
+
+
+파일 코드 스타일이 깔끔하게 통일된다.
+
+ESLint 적용이 안된다면?
+
+
+  “ESLint is disabled since its execution has not been approved or denied yet. Use the light bulb menu to open the approval dialog.”
+
+
+라며 파란 전구가 뜰 수가 있다. vscode를 사용하는 경우 eslint 사용을 허가해주어야 하기 때문이다.
+그럴땐 파란전구를 눌러서 뜨는 팝업창에서 allow를 누르면 해결된다.
+
+Prettier
+
+이름에서부터 알 수 있듯 Prettier는 코드를 더 예쁘게 만든다.
+
+ESLint는 예쁘게하기 + 코드 악취 제거라면 Prettier는 그냥 예쁘게 만드는 용도로 쓴다. 린트에서도 포맷팅 기능이 있지만, 프리티어를 더 많이 쓴다.
+
+Prettier 설치
+
+extensions에서 prettier를 검색하여 설치한다.
+
+
+
+프리티어도 개발 전반적으로 사용하기 때문에, -d와 -g 옵션을 주고 설치한다. 물론 프로젝트에서만 사용할거라면 -g옵션을 생략해도 된다.
+
+$ npm install --save-dev --save-exact prettier
+
+
+린트에 프리티어 끼얹기 (생략가능)
+
+린트는 자바스크립트 문법을 검사하고, 코드 포맷팅은 프리티어가 맡게한다. ESLint가 프린티어의 형식에 맞춰 린팅하도록 해보자. 이 옵션을 생략하고 바로 prettier extension만 사용해도 된다.
+프리티어와 프리티어 플러그인을 설치한다. 플러그인은 eslint에 끼얹는 용도다.
+
+$ npm install eslint-plugin-prettier@latest --save-dev -g 
+$ npm install --save-dev eslint-config-prettier # prettier와 겹치는 eslint 룰 삭제
+$ npm install --save-dev eslint-plugin-prettier # eslint 기본 포맷 대신 프리티어 룰과 동일한 포매팅을 이용함
+
+
+
+.eslintrc에 프리티어 확장팩을 설정한다. 뒤에 오는 설정이 앞을 덮어쓰기때문에 꼭 prettier가 뒤로 와야 한다!
+
+// estlintrc.json
+&quot;extends&quot;: [&quot;eslint:recommended&quot;,&quot;airbnb-base&quot;, &quot;plugin:prettier/recommended&quot;],
+
+
+⚠️ Vscode에서 .prettierrc와 eslint(prettier/prettier)의 싱크가 맞지 않는 문제가 발생하는 경우
+
+vscode를 이용할 떄, prettierrc는 수정했으나 eslint에는 반영되지 않는 경우가 있다. 이런 경우, vscode를 재시작하면 변경된 prettierrc로 잘 적용된다. 참고 링크 (https://github.com/prettier/eslint-plugin-prettier/issues/103)
+
+린트에 prettier 적용 확인하기
+
+린트를 사용하는 방법과 같다. 아래 명령어를 수행하고 코드가 포맷팅되는지 확인한다.
+
+eslint lintTest.js --fix # 린트에 프리티어 확장을 설치한 경우
+prettier --check . # 프리티어로 체크했을때 문제가 있는 파일 목록 출력
+prettier --write  test.js # test.js파일을 포맷팅해서 덮어쓴다
+
+
+.prettierrc 만들기
+
+린트의 설정은 eslintrc에서 세팅했다. 그렇다면 prettier의 설정은 어디서 수정할까? 그렇다. .prettierrc 파일이다. 이 파일도 json으로 만들수 있지만 js로 만들었다. 주석을 넣고싶었기 때문이다.
+
+.prettierrc.js 파일을 만들어 아래와 같은 내용을 넣는다. (내용참고: 시간을-줄이자-React-Vscode-초기세팅)
+
+// .prettierrc.js
+module.exports = {
+    singleQuote: true,
+    // 문자열은 홑따옴표로 formatting
+    semi: true,
+    //코드 마지막에 세미콜른이 있게 formatting
+    useTabs: false,
+    //탭의 사용을 금하고 스페이스바 사용으로 대체하게 formatting
+    tabWidth: 2,
+    // 들여쓰기 너비는 2칸
+    trailingComma: 'all',
+    // 자세한 설명은 구글링이 짱이긴하나 객체나 배열 키:값 뒤에 항상 콤마를 붙히도록 	  	//formatting
+    printWidth: 80,
+    // 코드 한줄이 maximum 80칸
+    arrowParens: 'avoid',
+    // 화살표 함수가 하나의 매개변수를 받을 때 괄호를 생략하게 formatting
+    endOfLine: &quot;auto&quot;,
+    // windows에 뜨는 'Delete cr' 에러 해결
+  };
+
+
+VSCode 확장프로그램 설정
+
+ESLint도 코드 포맷팅 기능이 있고, 프리티어도 있다. 둘이 충돌하지 않게 겹치는부분은 ESLint의 기능을 꺼준다.
+
+ESLint - Setting (단축키 ctrl+,)
+
+
+
+vscode에서 기본 format을 prettier로 설정한다.
+
+1. ctrl + shift + p를 눌러 팔레트를 연다.
+2. format document with ~
+3. config default formatter
+4. prettier 선택
+
+
+이제 eslint 명령어를 입력할 필요 없이 vscode의 format document(단축키 shift+alt+F)로 포매팅 할 수 있다.
+
+test.js 작성
+
+프리티어와 린트가 잘 작동하는지 알아보자.
+
+test.js파일을 만든다.
+
+function init(){
+    const single_q = 'hello world';
+    const double_q = &quot;hello world&quot;;
+    const no_semi = 500
+		console.log('hello world!')
+}
+init();
+
+
+세미콜론이 빠지고,  어떤 문자열은 따옴표고 어떤건 쌍따옴표로 적는 등 포맷을 지키지 않은 코드를 준비했다.
+palette에서 format document - prettier를 하면 코드가 정렬된다.
+
+저장시 코드 자동 포맷팅
+
+매번 이렇게 포맷팅하기 귀찮다. 저장시 알아서 포맷팅하게 설정하자.
+
+ESLint 환경설정에서 code actions on save 를 설정한다.
+
+
+
+이제 저장버튼을 누를 때마다 linter가 오류를 검사한다.
+
+그리고 Format On Save도 체크한다. 이제 프리티어가 저장할때마다 format해줄 것이다.
+
+
+
+
+
+경고 수준 바꾸기
+
+eslint가 빨간줄을 쳐주는건 좋은데, 문법 오류든, 선언만 해두고 안 쓴 변수든 모두 빨간줄로 알려준다.
+경고 수준을 바꿔 알아보기 편하게 만들자.
+
+.eslintrc.json의 rule를 아래와 같이 변경한다.
+
+&quot;rules&quot;: { &quot;no-unused-vars&quot;: &quot;warn&quot; }
+
+
+이제 오류가 아닌 경고로 표시된다.
+",
+            "wordcount": "1738",
+            "inLanguage": "ko",
+            "dateCreated": "2020-12-07/",
+            "datePublished": "2020-12-07/",
+            "dateModified": "2020-12-07/",
+            "author": {
+                "@type": "Person",
+                "name": "Kim Sun Jeong",
+                
+                "image": "/assets/img/uploads/profile.png",
+                
+                "jobTitle": "Frontend Developer",
+                "url": "http://localhost:4000/authors/sunmon/",
+                "sameAs": [
+                    "https://github.com/sunmon","https://www.linkedin.com/in/sunmon","https://conservative-vector.tistory.com/"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "CodeSik의 개발 공방",
+                "url": "http://localhost:4000/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://localhost:4000/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "tips",
+            "articleSection": "tips",
+            "keywords": [""]
+        }
+        </script>
+    </body>
+</html>

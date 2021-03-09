@@ -1,0 +1,116 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name:
+    detail: 팀스파르타
+    i18n: company_a
+  desc:
+    detail: 팀스파르타 교육 플랫폼과 백오피스 개발에서 풀스택으로 활동하고 있습니다.
+    i18n: company_a_desc
+  date:
+    detail: 2021년 3월
+    i18n: company_a_date
+  job:
+    detail: Intern, Full Stack Developer
+    i18n: company_a_job
+  icon: fa-plus-square
+  present: true
+
+- name:
+    detail: CIT 코딩학원 관리자 & 카카오 i Open Builder 연동 Spring 기반 Rest API 서버 개발
+    i18n: company_b
+  desc:
+    detail: CIT 코딩학원에서 2년동안 관리자로 근무하면서 느낀 학원 프로세스에 대한 이용자들의 불편함과 요구사항을 해결할 수 있도록 카카오톡 챗봇을 개발하여 수강생 인증, 진도표 공유, 수업 일정 확인, 온라인 수업 링크등을 Google Spread Sheet에서 보낼 수 있도록 구현하였습니다.
+    i18n: company_b_desc
+  date:
+    detail: 2019년 6월 - 2021년 3월
+    i18n: company_b_date
+  job:
+    detail: Backend Engineer, Spring, Administrator
+    i18n: company_b_job
+  icon: fa-plus-square
+
+- name:
+    detail: Dreamin BlockChain 해커톤
+    i18n: company_c
+  desc:
+    detail: Dreamin BlockChain 해커톤에 상위 20팀으로 선정되었으며, 이더리움을 기반으로한 신뢰성을 보장하는 공동구매 플랫폼 Moble 서비스를 개발하였습니다.
+    i18n: company_c_desc
+  date:
+    detail: 2020년 12월
+    i18n: company_c_date
+  job:
+    detail: Backend Engineer, Blockchain SmartContract Developer, Solidity, Android Studio
+    i18n: company_c_job
+  icon: fa-plus-square
+
+- name:
+    detail: 카카오 Ground X & 삼성전자 2020 제주 블록체인 해커톤
+    i18n: company_d
+  desc:
+    detail: 카카오와 삼성전자가 공동 주최한 2020 제주 블록체인 해커톤에 참여해 블록체인의 특성을 활용해 개인정보의 수집 없이 확진자의 동선을 추적할 수 있는 Chain:A(체인코로나) 서비스를 개발했습니다.
+    i18n: company_d_desc
+  date:
+    detail: 2020년 9월
+    i18n: company_d_date
+  job:
+    detail: Frontend Engineer, Design, Android Studio
+    i18n: company_d_job
+  icon: fa-plus-square
+
+
+- name:
+    detail: KAIST 몰입캠프
+    i18n: company_e
+  desc:
+    detail: 카이스트에서 주최하는 몰입캠프에 참여하여 총 4주간 4개의 프로젝트를 진행했습니다. AR Core Library를 사용한 병돌리기 안드로이드 어플리케이션(프론트엔드 담당), 인스타그램 클론 코딩(백엔드 담당), 블루투스 기반 소개팅 서비스 우연히 봄(디자인 및 프론트 담당), 언리얼엔진4 - 해리포터를 모티브로한 방탈출 게임을 제작하였습니다.
+    i18n: company_e_desc
+  date:
+    detail: 2020년 7월 - 8월
+    i18n: company_e_date
+  job:
+    detail: Android Studio, Node.js, MomgoDB, AR Core, Unreal Engine 4
+    i18n: company_e_job
+  icon: fa-plus-square
+
+
+- name:
+    detail: 삼성전자 X Decenter FOUNDERS 3기 교육 우수 수료 및 해커톤 우수상 수상
+    i18n: company_f
+  desc:
+    detail: 삼성전자와 Decenter가 공동 주최한 FOUNDERS 3기에 선발되어, 2주간 교육을 받은 뒤 해커톤에서 기존 '배드파더스' 홈페이지의 중앙화된 데이터베이스로 인한 유출, 조작, 개인 운영등의 문제점을 블록체인의 탈중앙성과 익명성, 무결성의 특징으로 개선한 Dapp을 개발하여 우수상을 수상받고 우수 수료생으로 수료하였습니다.
+    i18n: company_f_desc
+  date:
+    detail: 2020년 2월
+    i18n: company_f_date
+  job:
+    detail: Android Studio, Web3.j, Samsung Keystore, Platform SDK
+    i18n: company_f_job
+  icon: fa-plus-square
+
+- name:
+    detail: 한양대학교 소프트웨어 봉사단 Python 강사
+    i18n: company_g
+  desc:
+    detail: 한양대학교 소프트웨어 봉사단에서 한학기 동안 Python 강사로 활동하였습니다.
+    i18n: company_g_desc
+  date:
+    detail: 2017년 3월 - 9월
+    i18n: company_g_date
+  job:
+    detail: Python
+    i18n: company_g_job
+  icon: fa-plus-square
+
+- name:
+    detail: 한양대학교 컴퓨터공학부 신입학
+    i18n: company_h
+  desc:
+    detail: 한양대학교 컴퓨터공학부에 2016년 입학하였습니다. 2021년 가준 3학년 2학기를 수료하고 커리어를 쌓기위해 휴학중입니다.
+    i18n: company_h_desc
+  date:
+    detail: 2016년 3월 - 휴학
+    i18n: company_h_date
+  job:
+    detail: 신입학
+    i18n: company_h_job
+  icon: fa-plus-square

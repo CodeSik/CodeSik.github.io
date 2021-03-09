@@ -1,0 +1,64 @@
+/**
+* 형광펜 기능을 구현하는 scss
+* 사용법 : under-[color]
+* 참고 : open-color의 색상을 가져옴
+* 밑줄 or 형광펜 둘 중 하나로 통일
+**/
+
+@import './open-color';
+
+
+@mixin under-highlight($color) {
+    background: linear-gradient(to top, $color 40%, transparent 40%);
+}
+
+@mixin under-line($color) {
+    border-bottom:  1px solid $color;
+    box-shadow: inset 0 -3px 0 $color;
+}
+
+.ud {
+    @include under-highlight($oc-violet-2);
+}
+.ud-gray {
+    @include under-highlight($oc-gray-2);
+}
+.ud-yellow {
+    @include under-highlight($oc-yellow-2);
+}
+.ud-red {
+    @include under-highlight($oc-red-2);
+}
+.ud-violet {
+    @include under-highlight($oc-violet-2);
+}
+.ud-green {
+    @include under-highlight($oc-green-2);
+}
+.ud-lime {
+    @include under-highlight($oc-lime-2);
+}
+.ud-blue {
+    @include under-highlight($oc-blue-2);
+}
+.ud-indigo {
+    @include under-highlight($oc-indigo-2);
+}
+.ud-teal {
+    @include under-highlight($oc-teal-2);
+}
+.ud-cyan {
+    @include under-highlight($oc-cyan-2);
+}
+.ud-orange {
+    @include under-highlight($oc-orange-2);
+}
+.ud-grape {
+    @include under-highlight($oc-grape-2);
+}
+.ud-pink {
+    @include under-highlight($oc-pink-2);
+}
+.ud-darkgray {
+    @include under-highlight($oc-gray-5);
+}

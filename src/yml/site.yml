@@ -1,0 +1,29 @@
+name: NOT_NULL
+title: NOT NULL | TIL & Tech Blog
+email: blackmilk274@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  TIL (Today I Learn) & Tech Blog
+  Web, Security, Computer Science
+tags:
+  - blog
+  - web
+  - computer
+  - developer
+show_hero: true
+menu:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Category
+    url: /category
+  - title: Tags
+    url: /tags
+  - title: Contact
+    url: /contact
+  - title: Feed
+    url: /feed.xml
+
+email: blackmilk274@gmail.com
+disqus_username: Sunmon
+paginate: 12
