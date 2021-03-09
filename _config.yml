@@ -5,9 +5,7 @@ email: iqeq2328@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Tech Blog
   Web, Server, Computer Science
-teaser: "/assets/img/blog-image.png"
-logo: "/assets/img/blog-image.png"
-og_image: "/assets/img/blog-image.png"
+image: "/assets/img/blog-image.png"
 translations:
   text:
     new_post: "새로운 포스트"
