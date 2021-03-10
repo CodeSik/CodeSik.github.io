@@ -6,6 +6,7 @@ description: "블로그를 시작하게 된 계기"
 image: "/assets/img/default_imgs/thumb/code.jpg"
 optimized_image: "/assets/img/default_imgs/thumb/code.jpg"
 category: Life
+tags: Github Github_Pages Github_Blog
 ---
 
 ## **주인장 소개**

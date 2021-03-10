@@ -6,6 +6,7 @@ description: "마크다운(Markdown)의 정의와 사용법에 대해 정리합�
 image: "/assets/img/default_imgs/thumb_set.png"
 optimized_image: "/assets/img/default_imgs/thumb_set.png"
 category: Tips
+tags: MarkDown 마크다운
 ---
 
 <p class="callout"> 💡Tips - 마크다운에 대하여 </p>
