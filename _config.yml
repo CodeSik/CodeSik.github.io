@@ -7,6 +7,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Web, Server, Computer Science
 image: "/src/img/blog-image.png"
 
+# blog cover
+cover: "/assets/img/blog-image.png"
+
 translations:
   text:
     new_post: "새로운 포스트"
@@ -201,6 +204,13 @@ defaults:
     values:
       category: "Life"
       optimized_image: "/assets/img/default_imgs/thumb/til.png"
+  -
+    scope:
+      path: "_posts/Tips" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Tips"
+      optimized_image: "/assets/img/default_imgs/thumb/tips.png"
 
 
 # Theme

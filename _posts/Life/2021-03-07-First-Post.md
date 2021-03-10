@@ -3,8 +3,8 @@ date: 2021-03-07 23:40:45 +0900
 layout: post
 title: "[Github 블로그 호스팅] 개발 공방의 시작"
 description: "블로그를 시작하게 된 계기"
-image: "/assets/img/default_imgs/thumb/tips.jpg"
-optimized_image: "/assets/img/default_imgs/thumb/tips.jpg"
+image: "/assets/img/default_imgs/thumb/code.jpg"
+optimized_image: "/assets/img/default_imgs/thumb/code.jpg"
 category: Life
 ---
 
