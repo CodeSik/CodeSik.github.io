@@ -132,13 +132,16 @@ dependencies {
 }
 ```
 <br>
+
 ##### 배포
 * AWS EC2 Instance에 배포
 * 도메인 설정
 * 서버 통합, 도메인 분리
 <br>
+
 ##### 카카오 i Open Builder V2, 카카오 싱크 플러그인
 <br>
+
 ##### Google API
 * [Google Calendar API V3](https://developers.google.com/calendar)
 * [Google Sheet API V4](https://developers.google.com/sheets/api)
