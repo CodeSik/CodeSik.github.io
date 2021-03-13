@@ -199,6 +199,7 @@ Google Calendar API와 연동하여 Sheet DB에서 appUserID를 기반으로 학
 ##### 자주 묻는 질문
 자주 묻는 질문에서는 채널 내 포스트기능을 사용해 정리하여 학부모님들이 평소에 많이 여쭤보시는 사항을 정리해 확인하실 수 있도록 하였습니다. 해당 기능은 Skill Server와 연동된 기능이 아닌 카카오 i OpenBuilder 자체 기능입니다.
 ![qna](/assets/qna.png)
+
 ----
 ## CIT 코딩학원 관리자를 마치면서 ..
 
