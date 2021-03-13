@@ -212,6 +212,13 @@ defaults:
       category: "Tips"
       optimized_image: "/assets/img/default_imgs/thumb/tips.png"
 
+  -
+    scope:
+      path: "_posts/Project" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Project"
+      optimized_image: "/assets/img/default_imgs/thumb/web.jpg"
 
 # Theme
 # version: v3.1.0
