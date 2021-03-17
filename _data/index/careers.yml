@@ -1,19 +1,19 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
-- name:
-    detail: 팀스파르타
-    i18n: company_a
-  desc:
-    detail: 팀스파르타 교육 플랫폼과 백오피스 개발에서 풀스택으로 활동하고 있습니다.
-    i18n: company_a_desc
-  date:
-    detail: 2021년 3월
-    i18n: company_a_date
-  job:
-    detail: Intern, Full Stack Developer
-    i18n: company_a_job
-  icon: fa-plus-square
-  present: true
+# - name:
+#     detail: 팀스파르타
+#     i18n: company_a
+#   desc:
+#     detail: 팀스파르타 교육 플랫폼과 백오피스 개발에서 풀스택으로 활동하고 있습니다.
+#     i18n: company_a_desc
+#   date:
+#     detail: 2021년 3월
+#     i18n: company_a_date
+#   job:
+#     detail: Intern, Full Stack Developer
+#     i18n: company_a_job
+#   icon: fa-plus-square
+#
 
 - name:
     detail: CIT 코딩학원 관리자 & 카카오 i Open Builder 연동 Spring 기반 Rest API 서버 개발
@@ -28,7 +28,7 @@
     detail: Backend Engineer, Spring, Administrator
     i18n: company_b_job
   icon: fa-plus-square
-
+  present: true
 - name:
     detail: Dreamin BlockChain 해커톤
     i18n: company_c
