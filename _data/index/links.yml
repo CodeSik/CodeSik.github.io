@@ -1,9 +1,9 @@
 # links section data
-- last_name: Name 1
+- last_name: Resume
   first_name:
-  desc: CEO
-  website: https://www.google.com
-  email: ceo@google.com
+  desc: 이력서
+  website: https://www.notion.so/291187f5271f4d20bf699ced07aa40a4
+  email: iqeq2328@gmail.com
 
 - last_name: Donate
   first_name: Jalpc
