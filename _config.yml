@@ -227,5 +227,13 @@ defaults:
     values:
       category: "Database"
       optimized_image: "/assets/img/default_imgs/thumb/sql-db.png"
+
+  -
+    scope:
+      path: "_posts/OS" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "OS"
+      optimized_image: "/assets/img/default_imgs/thumb/sql-db.png"
 # Theme
 # version: v3.1.0
