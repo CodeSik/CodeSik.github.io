@@ -6,7 +6,7 @@ description: "SQL과 NoSQL 각각의 특징과 장단점, 사용하는 경우에
 image: "/assets/img/uploads/2021-04-04-SQL-VS-NOSQL/database_sql_vs_nosql.jpg"
 optimized_image: "/assets/img/uploads/2021-04-04-SQL-VS-NOSQL/database_sql_vs_nosql.jpg"
 category: Database
-tags: Database, SQL, NoSQL
+tags: Database SQL NoSQL
 ---
 
 <p class="callout"> 💡[Database] SQL과 NoSQL의 비교</p>
