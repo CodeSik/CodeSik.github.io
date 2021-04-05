@@ -56,7 +56,10 @@ CPU는 스케줄링 알고리즘을 통해서 메모리에 올릴 프로세스�
 
 - Segmentation
 
-    메모리에 배정하는 단위를 `Segment`를 베이스로 하는것입니다. Process는 Code, Data, Stack등 다양한 영역으로 나눠져있는데, 각각의 영역을 Segment로 나눠서 메모리에 Address Translation 과정을 통해 할당하는 것입니다. 이렇게 되면 각 Segment가 다른 사이즈를 가지고 있다는 것을 알 수 있습니다.
+    메모리에 배정하는 단위를 `Segment`를 베이스로 하는것입니다. Process는 Text, Data, Stack등 다양한 영역으로 나눠져있는데, 각각의 영역을 Segment로 나눠서 메모리에 Address Translation 과정을 통해 할당하는 것입니다. 이렇게 되면 각 Segment가 다른 사이즈를 가지고 있다는 것을 알 수 있습니다.
+![os3-1](/assets/os3-1.png)
+> 프로세스의 구조<br>
+사진 출처: https://zoomkoding.github.io/os/2019/04/20/os-3.html
 
     스케줄러에 의해 `Context Switching` 이 될 때 Process의 세그먼트 별 시작주소 값을 Memory Relocation Register에 저장하여 할당합니다.
 
@@ -64,6 +67,8 @@ CPU는 스케줄링 알고리즘을 통해서 메모리에 올릴 프로세스�
 
     ![IMG_2A7BE3182EED-1](/assets/IMG_2A7BE3182EED-1.jpeg)
 <br>  
+
+
 - Paging
 
     `Page`란 동일한 일정 크기의 메모리 영역이며, 메모리에 Page 단위를 베이스로 하여 비연속적으로 할당하는 방법입니다. Process를 일정한 Page라는 단위로 나누는 것입니다.
