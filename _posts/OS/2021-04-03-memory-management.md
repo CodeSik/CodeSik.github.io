@@ -73,14 +73,14 @@ CPU는 스케줄링 알고리즘을 통해서 메모리에 올릴 프로세스�
 
     `Page`란 동일한 일정 크기의 메모리 영역이며, 메모리에 Page 단위를 베이스로 하여 비연속적으로 할당하는 방법입니다. Process를 일정한 Page라는 단위로 나누는 것입니다.
 
-    Page는 `Frame`이라는 용어와 연관되어 있는데, Page는 Virtual Address Space의 Block이고 Frame은 Physical Address Space의 Block입니다. 그래서 `VAS(Virtual Address Space)`에서 `PAS(Physical Address Space)`로의 Mapping을 통홰 메모리에 할당합니다. 이때 Memory Relocation Register를 사용하는데, Segmentation에 비해서 굉장히 큰 비용이 듭니다. 그래서 OS에서는 `Page Table`을 통해 비용을 줄였는데, 이에 대해서는 다른 포스팅에서 다루겠습니다.
+    Page는 `Frame`이라는 용어와 연관되어 있는데, Page는 Virtual Address Space의 Block이고 Frame은 Physical Address Space의 Block입니다. 그래서 `VAS(Virtual Address Space)`에서 `PAS(Physical Address Space)`로의 Mapping을 통해 메모리에 할당합니다. 이때 Memory Relocation Register를 사용하는데, Segmentation에 비해서 굉장히 큰 비용이 듭니다. 그래서 OS에서는 `Page Table`을 통해 비용을 줄였는데, 이에 대해서는 다른 포스팅에서 다루겠습니다.
 
     ![IMG_1293317E6A78-1](/assets/IMG_1293317E6A78-1.jpeg)
 
 ---
 
 ### Demand Paging
-모든 프로세스가 물리적인 메모리에 할당되는 방식은 너무 비효율 적입니다. 그래서 메모리 공간의 Utilization을 높이기 위해서 다양한 방법을 사용할 수 있습니다.
+모든 프로세스가 물리적인 메모리에 할당되는 방식은 너무 비효율적 입니다. 그래서 메모리 공간의 Utilization을 높이기 위해서 다양한 방법을 사용할 수 있습니다.
 
 * Dynamic Loading
 * Overlays
@@ -134,7 +134,7 @@ Page Table은 Logical Memory(Page)와 Physical Memory(Frame)의 매핑 정보를
 정리하자면, Page Replacement의 과정은 다음과 같습니다.
   1. 디스크에서 필요한 Page를 찾는다.
   2. Victim Frame을 선정하고 Swap out
-  3. 필요한 Page를 Swaip In
+  3. 필요한 Page를 Swap In
 
 중요한 부분은 `Victim Frame`을 어떻게 선정해야 할것인가? 입니다. 알고리즘이 굉장히 중요하고 성능에 영향을 미칩니다. 오랫동안 사용되지 않은 Frame을 잘 선정하는 것이 중요하죠.
 
