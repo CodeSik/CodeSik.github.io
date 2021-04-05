@@ -6,7 +6,7 @@ description: "운영체제에서 메모리를 관리하는 방법"
 image: "/assets/img/uploads/2021-04-03-memory-management/memory_management_img.jpg"
 optimized_image: "/assets/img/uploads/2021-04-03-memory-management/memory_management_img.jpg"
 category: OS
-tags: OS, Memory, Memory_Management, 메모리, 운영체제
+tags: OS Memory Memory_Management 메모리 운영체제
 ---
 
 <p class="callout"> 💡[OS] 메모리 관리 기법과 가상 메모리</p>
