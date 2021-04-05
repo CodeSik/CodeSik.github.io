@@ -45,10 +45,10 @@ CPU는 스케줄링 알고리즘을 통해서 메모리에 올릴 프로세스�
 
 ### 비연속적 Address Binding
 
-- 💡아이디어(Address Translation)
+- 💡아이디어(Address Translation)<br>
     프로그램(CPU)은 Logical address를 사용하고, OS나 HW는 이를 하드웨어가 사용하는 Physical address로 변환합니다. 이렇게 Address Translation을 하게되면 비연속적인 메모리 할당이 가능해지며, Flexibility가 높아집니다.
     <br>
-- Address Translation
+- Address Translation<br>
     `Address Translation` 과정은 Logical Address를 Physical Address로 변환하는 과정이며, `MMU(Memory - Management Unit)`를 통해 수행할 수 있습니다. 이는 CPU와 Memory 사이에 있는 Relocation Register입니다. 하드웨어의 서포트를 받는것이죠.
 
 #### 비연속적으로 메모리를 할당하는 두가지 기법
