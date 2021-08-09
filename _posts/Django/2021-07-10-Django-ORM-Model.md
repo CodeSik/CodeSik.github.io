@@ -1,5 +1,5 @@
 ---
-date: 2021-07-01 08:40:45 +0900
+date: 2021-07-10 12:40:45 +0900
 layout: post
 title: "Django(장고) ORM 정리 - Model의 정의"
 description: "Django의 ORM에 대한 개념"
