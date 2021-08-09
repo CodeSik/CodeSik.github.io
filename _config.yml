@@ -244,5 +244,12 @@ defaults:
       category: "Algorithm"
       optimized_image: "/assets/img/default_imgs/thumb/algorithm.png"
 
+  -
+    scope:
+      path: "_posts/Django" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      category: "Django"
+      optimized_image: "/assets/img/default_imgs/thumb/django.png"
 # Theme
 # version: v3.1.0
