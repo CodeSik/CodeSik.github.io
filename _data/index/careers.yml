@@ -1,7 +1,20 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 
-
+- name:
+    detail: 피플펀드 Fintech Engineering Group
+    i18n: company_a
+  desc:
+    detail: 피플펀드 내의 차입자 상환, 투자자 정산 등 하루에 수십만건의 돈의 흐름을 관리하는 Fintech Engineering 그룹에서 백엔드 엔지니어 인턴으로 근무중입니다.
+    i18n: company_a_desc
+  date:
+    detail: 2021년 4월 - 2022년 2월
+    i18n: company_a_date
+  job:
+    detail: Backend Engineer, Django, Python, Spring, Kotlin
+    i18n: company_a_job
+  icon: fa-plus-square
+  present: true
 - name:
     detail: CIT 코딩학원 관리자 & 카카오 i Open Builder 연동 Spring 기반 Rest API 서버 개발
     i18n: company_b
@@ -15,7 +28,6 @@
     detail: Backend Engineer, Spring, Administrator
     i18n: company_b_job
   icon: fa-plus-square
-  present: true
 - name:
     detail: Dreamin BlockChain 해커톤
     i18n: company_c

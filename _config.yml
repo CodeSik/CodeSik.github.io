@@ -73,7 +73,7 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: fa-linux
     - name: icon-apache
-  desc: "백엔드 엔지니어를 희망하는 아직은 부족한 주니어 개발자 입니다 :) \n 사용 가능 기술 스택은 Python, C++, Java, JavaScript / Spring, Android Studio, Node.js 입니다." # Describe yourself.
+  desc: "백엔드 엔지니어를 희망하는 아직은 부족한 주니어 개발자 입니다 :)" # Describe yourself.
 
 ## carousels
 index_carousel: on # index page carousel switch
