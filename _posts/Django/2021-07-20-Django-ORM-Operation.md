@@ -1,5 +1,5 @@
 ---
-date: 2021-07-20 08:40:45 +0900
+date: 2021-08-10 08:40:45 +0900
 layout: post
 title: "Django(장고) ORM 정리 - 데이터를 조작하는 방법"
 description: "Django의 ORM에 대한 개념"
