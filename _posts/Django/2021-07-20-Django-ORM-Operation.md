@@ -63,3 +63,5 @@ for person in person_list:
 
 
 ![1_hgO-53N6ReTT99l4IygmiA](https://i.imgur.com/7WZI4mr.png)
+
+(작성중)
