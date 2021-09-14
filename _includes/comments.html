@@ -12,14 +12,27 @@
         async>
 </script> -->
 <script type = "text/javascript">
-  val cmt = document.createElement('script');
-  cmt.async=true;
-  cmt.src="https://utteranc.es/client.js";
-  cmt.repo="CodeSik/CodeSik.github.io";
-  cmt.issue-term="pathname";
-  cmt.theme="github-light";
-  cmt.crossorigin="anonymous";
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cmt);
+  var cmt_loaded = false;
+
+  function load_comment()
+  {
+    val cmt = document.createElement('script');
+    cmt.async=true;
+    cmt.src="https://utteranc.es/client.js";
+    cmt.repo="CodeSik/CodeSik.github.io";
+    cmt.issue-term="pathname";
+    cmt.theme="github-light";
+    cmt.crossorigin="anonymous";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cmt);
+  }
+  window.onscroll = function(e) {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+        //hit bottom of page
+        if (cmt_loaded==false)
+            load_comment()
+    }
+  };
+
 
 </script>
 {% endif %}
