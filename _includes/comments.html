@@ -4,29 +4,11 @@
     <h3>{{ site.translations.text.comments | default: "Comments" }}</h3>
     <div id="github_comment_thread"></div>
 </section>
-<!-- <script src="https://utteranc.es/client.js"
+<script src="https://utteranc.es/client.js"
         repo="CodeSik/CodeSik.github.io"
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script> -->
-<script>
-  function setAttributes(el, attrs) {
-    for (var key in attrs) {
-      el.setAttribute(key, attrs[key]);
-    }
-  }
-  var script = document.createElement('script');
-  setAttributes(script, {
-    "src": "https://utteranc.es/client.js",
-    "repo": "CodeSik/CodeSik.github.io",
-    "issue-term": "pathname",
-    "label": "comment",
-    "theme": "github-light",
-    "crossorigin": "anonymous",
-    "async": "async"
-  });
-  document.body.appendChild(script);
 </script>
 {% endif %}

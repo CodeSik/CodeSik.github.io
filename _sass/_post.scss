@@ -406,6 +406,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  z-index: 9999;
   height: 38px;
   padding: rem(30px) 0;
   border-bottom: 1px solid $themeColor;
@@ -449,6 +450,7 @@
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 9999;
   bottom: -100%;
   display: block;
   width: 100%;
@@ -508,6 +510,7 @@
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 9999;
   bottom: -100%;
   display: block;
   width: 100%;
