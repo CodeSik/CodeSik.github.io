@@ -11,28 +11,22 @@
         crossorigin="anonymous"
         async>
 </script> -->
-<script type = "text/javascript">
-  var cmt_loaded = false;
-
-  function load_comment()
-  {
-    val cmt = document.createElement('script');
-    cmt.async=true;
-    cmt.src="https://utteranc.es/client.js";
-    cmt.repo="CodeSik/CodeSik.github.io";
-    cmt.issue-term="pathname";
-    cmt.theme="github-light";
-    cmt.crossorigin="anonymous";
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cmt);
-  }
-  window.onscroll = function(e) {
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
-        //hit bottom of page
-        if (cmt_loaded==false)
-            load_comment()
+<script>
+  function setAttributes(el, attrs) {
+    for (var key in attrs) {
+      el.setAttribute(key, attrs[key]);
     }
-  };
-
-
+  }
+  var script = document.createElement('script');
+  setAttributes(script, {
+    "src": "https://utteranc.es/client.js",
+    "repo": "CodeSik/CodeSik.github.io",
+    "issue-term": "pathname",
+    "label": "comment",
+    "theme": "github-light",
+    "crossorigin": "anonymous",
+    "async": "async"
+  });
+  document.body.appendChild(script);
 </script>
 {% endif %}
