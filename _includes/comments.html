@@ -2,14 +2,24 @@
 
 <section class="comments">
     <h3>{{ site.translations.text.comments | default: "Comments" }}</h3>
-    <script src="https://utteranc.es/client.js"
-            repo="CodeSik/CodeSik.github.io"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
     <div id="github_comment_thread"></div>
 </section>
+<!-- <script src="https://utteranc.es/client.js"
+        repo="CodeSik/CodeSik.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> -->
+<script type = "text/javascript">
+  val cmt = document.createElement('script');
+  cmt.async=true;
+  cmt.src="https://utteranc.es/client.js";
+  cmt.repo="CodeSik/CodeSik.github.io";
+  cmt.issue-term="pathname";
+  cmt.theme="github-light";
+  cmt.crossorigin="anonymous";
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cmt);
 
+</script>
 {% endif %}
