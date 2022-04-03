@@ -14,8 +14,8 @@ module.exports = {
     name: `서건식`,
     bio: {
       role: `개발자`,
-      description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
-      thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
+      description: ['배움의 가치를 아는', '꾸준함의 가치를 아는', '몰입의 가치를 아는'],
+      thumbnail: 'codesik.gif', // Path to the image in the 'asset' folder
     },
     social: {
       github: `https://github.com/CodeSik`,
