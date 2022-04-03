@@ -5,3 +5,5 @@ package-json.lock
 _site
 node_modules
 _drafts
+.cache
+public
