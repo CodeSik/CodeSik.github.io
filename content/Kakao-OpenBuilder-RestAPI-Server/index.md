@@ -9,7 +9,8 @@ categories: 프로젝트
 
 <p class="callout"> 💡Project -  Spring을 사용한 카카오 i Open Builder 챗봇 연동 RestAPI 서버 개발 </p>
 
-----
+![썸네일](./Thumbnail_1.jpg)
+
 ## 프로젝트 개요
 
 ### 시작하게된 계기
@@ -152,7 +153,7 @@ dependencies {
  제공하는 기능은 다음과 같습니다.
  일단 전체 메뉴는 다음과 같습니다. 아무 메시지를 입력하면 폴백 블록이 작동하면서, 메뉴로 유도합니다.
 
- ![menu](/assets/menu.png)
+ ![menu](./menu.png)
 
 ----
 ##### 수강생 인증 - Google Spread Sheet API 연동
@@ -161,13 +162,13 @@ dependencies {
 
 수강생 인증을 마치고, appUserID가 등록되면 Request로 전달되는 appUserID를 기반으로 모든 기능이 작동합니다.
 
-![register](/assets/register.png)
+![register](./register.png)
 
 ----
 ##### 진도표 확인 - Google Spread Sheet API 연동
 
 보이는 메뉴에서 진도표 확인을 누른 후 등록된 모든 자녀의 진도표 링크가 포함된 Basic Card를 자녀의 수만큼 carousel 형태로 보여줍니다. 한번만 인증하면, 더이상 요구하는 정보는 없습니다. 매우 간편하게 사용자 입장에서 접근할 수 있도록 했습니다.
-![progress](/assets/progress.png)
+![progress](./progress.png)
 
 ----
 ##### 온라인 수업 링크 - Google Spread Sheet API 연동
@@ -175,14 +176,14 @@ dependencies {
 학원에는 현재 Jitsi Meet 오픈소스를 활용해 자체 서버에 구축해놓은 상태입니다. 해당 url 뒤에 선생님 이름으로 생성된 온라인 링크를 전송하여, 매번 온라인 수업 링크를 선생님에게 전달받아 학생에게 전달하는 프로세스를 획기적으로 개선합니다.
 혹시 자녀가 여러명이라면, 이름을 입력해주면 됩니다.
 
-![link](/assets/link.png)
+![link](./link.png)
 
 ----
 ##### 수업 일정 확인 - Google Spread Sheet, Calendar API 연동
 
 Google Calendar API와 연동하여 Sheet DB에서 appUserID를 기반으로 학생을 검색하고, 여러명인 경우 학생을 선택하여 캘린더에 저장되어있는 수업 일정을 확인할 수 있습니다. carousel 형태로 제공하며, 최대 10개의 일정을 보여줍니다.
 
-![schedule](/assets/schedule.png)
+![schedule](./schedule.png)
 
 ----
 ##### 수업 일정 변경 - Google Spread Sheet API 연동
@@ -190,13 +191,13 @@ Google Calendar API와 연동하여 Sheet DB에서 appUserID를 기반으로 학
 시간을 받는 카카오 i OpenBuilder의 플러그인을 사용해 변경 전 수업의 시간과, 변경 후 수업의 시간을 받고 학생이 여러명인 경우 학생을 선택해 변경요청을 하면, 학부모님이 해당 사항을 기반으로 상담을 요청할 수 있습니다.
 
 또한 해당 Request를 관리 업무에 자동으로 추가하도록 하여 관리자가 확인할 수 있도록 했습니다. 어떤 학생이 어떤 시간으로 변경을 요청하였는지 한번에 볼 수 있도록 기능을 지원합니다.
-![IMG_0949](/assets/IMG_0949.PNG)
-![schedulechange](/assets/schedulechange.png)
+![IMG_0949](./IMG_0949.PNG)
+![schedulechange](./schedulechange.png)
 
 ----
 ##### 자주 묻는 질문
 자주 묻는 질문에서는 채널 내 포스트기능을 사용해 정리하여 학부모님들이 평소에 많이 여쭤보시는 사항을 정리해 확인하실 수 있도록 하였습니다. 해당 기능은 Skill Server와 연동된 기능이 아닌 카카오 i OpenBuilder 자체 기능입니다.
-![qna](/assets/qna.png)
+![qna](./qna.png)
 
 ----
 ## CIT 코딩학원 관리자를 마치면서 ..
