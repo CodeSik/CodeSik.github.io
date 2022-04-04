@@ -1,4 +1,4 @@
-name: gatsby deploy
+name: gatsby-deploy
 
 on:
   push:
@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: packages install
-        run: npm install
+        run: yarn install
 
       - name: gatsby build
-        run: gatsby clean && gatsby build && gh-pages -d public
+        run: yarn build
         env:
           GH_API_KEY: ${{ secrets.API_KEY }}
 
