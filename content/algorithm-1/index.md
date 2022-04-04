@@ -48,3 +48,6 @@ def solution(participant, completion):
 
     return participant[-1]
 ```
+
+```toc
+```

@@ -51,3 +51,6 @@ GC 튜닝이란 이러한 Stop The World 상태의 시간을 최소한으로 하
 ### Old Generation 동작 방식
 
 `Old Generation(Major GC)` 에서 `Major GC` 가 활성화 되기 위해선 해당 영역에 객체가 꽉 차야합니다. 다만 Major GC는 굉장히 오래걸리는 작업입니다. Young 영역보다 크기가 클 뿐더러, Young 영역의 객체를 참조하고 있을 수도 있기 때문입니다.
+
+```toc
+```
