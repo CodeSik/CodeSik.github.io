@@ -4,7 +4,7 @@ title: Github 블로그 호스팅 - 개발 공방의 시작
 date: '2021-03-07 23:40:45'
 author: CodeSik
 tags: Github Github_Pages Github_Blog
-categories: 회고
+categories: Life
 ---
 
 ## **주인장 소개**

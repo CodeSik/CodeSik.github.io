@@ -4,7 +4,7 @@ title: 프로그래머스 - Level 1 완주하지 못한 선수 | Python
 date: '2021-04-09 02:20:45'
 author: CodeSik
 tags: 알고리즘 프로그래머스 파이썬
-categories: 알고리즘
+categories: Algorithm
 ---
 
 <p class="callout"> 💡[프로그래머스] Level 1 완주하지 못한 선수 | Python</p>

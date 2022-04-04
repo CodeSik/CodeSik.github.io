@@ -4,7 +4,7 @@ title: Spring을 사용한 카카오 i Open Builder 챗봇 연동 RestAPI 서버
 date: '2021-03-13 22:20:45'
 author: CodeSik
 tags: 프로젝트
-categories: 프로젝트
+categories: Projects
 ---
 
 <p class="callout"> 💡Project -  Spring을 사용한 카카오 i Open Builder 챗봇 연동 RestAPI 서버 개발 </p>

@@ -4,7 +4,7 @@ title: 피플펀드 1개월간의 인턴 생활 회고
 date: '2021-05-26 03:20:45'
 author: CodeSik
 tags: 인턴 피플펀드
-categories: 회고
+categories: Life
 ---
 
 ![썸네일](./IMG_1564.png)

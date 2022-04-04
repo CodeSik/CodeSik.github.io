@@ -4,7 +4,7 @@ title: 피플펀드 인턴 면접 및 합격 후기
 date: '2021-04-14 05:20:45'
 author: CodeSik
 tags: 인턴 피플펀드
-categories: 회고
+categories: Life
 ---
 
 ![배너](./pf_sns_banner.png)
