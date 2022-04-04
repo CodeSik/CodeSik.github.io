@@ -4,7 +4,7 @@ import React, { useCallback } from 'react';
 import PostCard from '../post-card';
 import './style.scss';
 
-const PostCardsColumn = ({ posts, showMoreButton, moreUrl }) => {
+function PostCardColumn({ posts, showMoreButton, moreUrl }) {
   const onMoreButtonClick = useCallback(() => {
     navigate(moreUrl);
   }, [moreUrl]);
