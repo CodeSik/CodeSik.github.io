@@ -53,14 +53,13 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CodeSik/CodeSik.github.io"
+    "url": "https://github.com/zoomkoding/zoomkoding-gatsby-blog"
   },
   "bugs": {
-    "url": "https://github.com/CodeSik/CodeSik.github.io/issues"
+    "url": "https://github.com/zoomkoding/zoomkoding-gatsby-blog/issues"
   }
 }
