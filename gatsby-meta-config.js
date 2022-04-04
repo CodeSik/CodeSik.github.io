@@ -58,9 +58,6 @@ module.exports = {
         date: '2020.07 ~ 2020.08',
         activity: 'KAIST 몰입캠프',
         links: {
-          github: 'https://github.com/CodeSik/GotiPocari_Project1',
-          github: 'https://github.com/CodeSik/MadCampWeek2',
-          github: 'https://github.com/CodeSik/MadCampWeek2_Backend',
           github: 'https://github.com/CodeSik/2020_madcamp_third',
         },
       },
