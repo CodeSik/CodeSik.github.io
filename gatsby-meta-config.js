@@ -62,7 +62,6 @@ module.exports = {
           github: 'https://github.com/CodeSik/MadCampWeek2',
           github: 'https://github.com/CodeSik/MadCampWeek2_Backend',
           github: 'https://github.com/CodeSik/2020_madcamp_third',
-          github: 'https://github.com/CodeSik/2020_madcamp_third-server',
         },
       },
       {
