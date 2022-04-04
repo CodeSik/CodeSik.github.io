@@ -52,7 +52,7 @@ module.exports = {
 
       {
         date: '2020.02',
-        activity: '삼성전자 X Decenter FOUNDERS 3기 교육 우수 수료 및 해커톤 우수상 수상',
+        activity: '삼성전자 X Decenter FOUNDERS 3기 해커톤 우수상 수상',
       },
       {
         date: '2020.07 ~ 2020.08',
