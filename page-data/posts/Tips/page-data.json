@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/posts/Tips",
+    "result": {"pageContext":{"currentCategory":"Tips","categories":["All","Life","CS","Framework","Algorithm","Database","Projects","Tips"],"edges":[{"node":{"id":"4d0a336d-7cb7-55e2-a003-0d851eb1e6b0","excerpt":"마크다운(MarkDown) 문법 위키백과에서 정의하는 마크다운(Markdown)의 정의는 다음과 같습니다. 마크다운(markdown)은 일반 텍스트 기반의 경량 마크업 언어다. 일반 텍스트로 서식이 있는 문서를 작성하는 데 사용되며, 일반 마크업 언어에 비해 문법이 쉽고 간단한 것이 특징이다. HTML과 리치 텍스트(RTF) 등 서식 문서로 쉽게 변환되기 때문에 응용 소프트웨어와 함께 배포되는 README 파일이나 온라인 게시물 등에 많이 사용된다. 위키백과 마크다운(MarkDown)은 Github의  등에서 md 확장자를 통해서 접해보셨을 거에요, 쉽게 말하면  이고, 특수문자나 기호 등을 사용해서 HTML로 쉽게 변환할 수 있는 언어라고 생각하시면 됩니다. 개발자라면 마크다운(MarkDown) 문법 정도는 알고계셔야 좋습니다 :) 그럼 알아볼까요? 제목(Header) 제일 먼저 제목입니다. 제목을 작성하는 방법은 두가지로 나뉩니다. 을 사용해 표시 을 사용해 표시 을 사용해 표…","fields":{"slug":"/How-To-Use-MarkDown/"},"frontmatter":{"categories":"Tips","title":"마크다운(MarkDown) 문법, 사용법 정리","date":"March 10, 2021"}},"next":{"fields":{"slug":"/First-Post/"}},"previous":{"fields":{"slug":"/Kakao-OpenBuilder-RestAPI-Server/"}}}]}},
+    "staticQueryHashes": ["1073350324","1956554647","2938748437"]}
